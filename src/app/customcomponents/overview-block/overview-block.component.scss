@@ -5,3 +5,19 @@ th {
   width: 50%;
   text-align: center;
 }
+
+.list-colour {
+  background-color: transparent;
+}
+
+.details,  {
+  background-color: #f8f9fa;
+  transition: .5s;
+}
+
+.details:hover {
+  z-index: 100;
+  background-color: rgba(0, 0, 0, .5);
+  transition: .5s;
+  cursor: pointer;
+}
