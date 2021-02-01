@@ -16,9 +16,15 @@ export class ProductPageComponent implements OnInit {
 
   ngOnInit(): void {
     const product = new ProductDTO();
-    const picture = new PictureURLDTO();
-    picture.url = '../../../../assets/jatszoter.jpg';
-    product.pictureURLs = [picture];
+    const picture1 = new PictureURLDTO();
+    const picture2 = new PictureURLDTO();
+    const picture3 = new PictureURLDTO();
+    const picture4 = new PictureURLDTO();
+    picture1.url = '../../../../assets/jatszoter.jpg';
+    picture2.url = '../../../../assets/jatszoter2.jpg';
+    picture3.url = '../../../../assets/jatszoter.jpg';
+    picture4.url = '../../../../assets/jatszoter2.jpg';
+    product.pictureURLs = [picture1, picture2, picture3, picture4, picture1];
     product.productName = 'Nagy játszótér';
     product.id = 0;
     product.priceInHUF = 100000;

@@ -1,0 +1,10 @@
+<body>
+  <div class="container">
+    <img class="main-image" src="{{pictureURLDTOs[0].url}}" (click)="showGallery(0)">
+  </div>
+  <ul>
+    <li *ngFor="let image of pictureURLDTOs; index as i">
+      <img class="small-image" src="{{image.url}}" (click)="showGallery(i)">
+    </li>
+  </ul>
+</body>
