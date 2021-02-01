@@ -1,0 +1,25 @@
+<div class="card bg-light mb-3" style="width: 18rem;">
+  <img src="{{product.pictureURLs[0].url}}" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">{{product.productName}}</h5>
+    <app-dimensions [productDimensions]="product.dimensions"></app-dimensions>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">Mennyiség: {{amount}}</li>
+  </ul>
+  <div class="card-body">
+    <table>
+      <tr>
+        <th>
+          <div class="btn-group" role="group" aria-label="First group">
+            <button (click)="decreaseAmount()" type="button" class="btn btn-secondary">-</button>
+            <button (click)="increaseAmount()" type="button" class="btn btn-secondary">+</button>
+          </div>
+        </th>
+        <th>
+          <button type="button" class="btn btn-secondary">Kosárba</button>
+        </th>
+      </tr>
+    </table>
+  </div>
+</div>

@@ -1,2 +1,25 @@
-<h1>{{product.productName}}</h1>
-<app-image-gallery [pictureURLDTOs]="product.pictureURLs"></app-image-gallery>
+<body>
+  <table>
+    <tr>
+      <th rowspan="3" class="image-container">
+        <app-image-gallery [pictureURLDTOs]="product.pictureURLs"></app-image-gallery>
+      </th>
+      <th>
+        <h1>{{product.productName}}</h1>
+      </th>
+      <th>
+        <app-overview-block [product]="product"></app-overview-block>
+      </th>
+    </tr>
+    <tr>
+      <th>
+
+      </th>
+    </tr>
+    <tr>
+
+    </tr>
+  </table>
+</body>
+
+

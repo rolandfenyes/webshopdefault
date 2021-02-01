@@ -6,12 +6,16 @@ import { AppComponent } from './app.component';
 import { ProductPageComponent } from './webshop/Product/product-page/product-page.component';
 import {ImageGalleryComponent} from './customcomponents/image-gallery/image-gallery.component';
 import {IvyGalleryModule} from 'angular-gallery';
+import { OverviewBlockComponent } from './customcomponents/overview-block/overview-block.component';
+import { DimensionsComponent } from './customcomponents/dimensions/dimensions.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ProductPageComponent,
-    ImageGalleryComponent
+    ImageGalleryComponent,
+    OverviewBlockComponent,
+    DimensionsComponent
   ],
   imports: [
     BrowserModule,

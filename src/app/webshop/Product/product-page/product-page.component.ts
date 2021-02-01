@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Cart} from '../../../model/cart';
-import {PictureURLDTO, ProductDTO} from '../../../model/product';
+import {DimensionsDTO, PictureURLDTO, ProductDTO} from '../../../model/product';
 import {ActivatedRoute} from '@angular/router';
 
 @Component({
@@ -16,6 +16,13 @@ export class ProductPageComponent implements OnInit {
 
   ngOnInit(): void {
     const product = new ProductDTO();
+    const dimensions = new DimensionsDTO();
+    dimensions.widthInMetre = 5.5;
+    dimensions.heightInMetre = 3.2;
+    dimensions.depthInMetre = 3;
+    dimensions.weightInKg = 500;
+    dimensions.material = 'Fa';
+    product.dimensions = dimensions;
     const picture1 = new PictureURLDTO();
     const picture2 = new PictureURLDTO();
     const picture3 = new PictureURLDTO();
