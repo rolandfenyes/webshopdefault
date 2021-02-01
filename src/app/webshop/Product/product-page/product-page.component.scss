@@ -1,3 +1,28 @@
 table {
-  width: 100vw;
+  width: 90vw;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+}
+
+.first-row {
+  height: 100px;
+}
+
+.side-containers {
+  vertical-align: top;
+
+}
+
+.padding-top {
+  padding-top: 100px;
+}
+
+p, h1 {
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+th {
+  width: 20%;
 }

@@ -1,23 +1,30 @@
 <body>
   <table>
-    <tr>
-      <th rowspan="3" class="image-container">
+    <tr class="first-row">
+      <th rowspan="3" class="side-containers padding-top">
         <app-image-gallery [pictureURLDTOs]="product.pictureURLs"></app-image-gallery>
       </th>
-      <th>
+      <td colspan="3">
         <h1>{{product.productName}}</h1>
-      </th>
-      <th>
+      </td>
+      <th rowspan="3" class="side-containers padding-top">
         <app-overview-block [product]="product"></app-overview-block>
       </th>
     </tr>
-    <tr>
-      <th>
-
-      </th>
+    <tr class="second-row">
+      <td colspan="3" class="side-containers">
+        <app-paragraphs [text]="product.description"></app-paragraphs>
+      </td>
     </tr>
     <tr>
-
+      <th></th>
+      <th>
+        <h5>
+          Méretek
+        </h5>
+        <app-dimensions class="dimension-container" [productDimensions]="product.dimensions"></app-dimensions>
+      </th>
+      <th></th>
     </tr>
   </table>
 </body>

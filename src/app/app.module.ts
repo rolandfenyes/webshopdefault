@@ -8,6 +8,7 @@ import {ImageGalleryComponent} from './customcomponents/image-gallery/image-gall
 import {IvyGalleryModule} from 'angular-gallery';
 import { OverviewBlockComponent } from './customcomponents/overview-block/overview-block.component';
 import { DimensionsComponent } from './customcomponents/dimensions/dimensions.component';
+import { ParagraphsComponent } from './customcomponents/paragraphs/paragraphs.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { DimensionsComponent } from './customcomponents/dimensions/dimensions.co
     ProductPageComponent,
     ImageGalleryComponent,
     OverviewBlockComponent,
-    DimensionsComponent
+    DimensionsComponent,
+    ParagraphsComponent
   ],
   imports: [
     BrowserModule,
