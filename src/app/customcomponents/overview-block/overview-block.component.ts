@@ -1,6 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {ProductDTO} from '../../model/product';
 import {Router} from '@angular/router';
+import {Cart} from '../../model/cart';
 
 @Component({
   selector: 'app-overview-block',
@@ -59,6 +60,12 @@ export class OverviewBlockComponent implements OnInit {
   // tslint:disable-next-line:typedef
   navigateToProductPage() {
     this.router.navigateByUrl('product/' + this.index);
+  }
+
+  // tslint:disable-next-line:typedef
+  addElementToCart() {
+    Cart.getInstance().addToCart(this.product);
+    console.log('yeah');
   }
 
 }

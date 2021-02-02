@@ -11,7 +11,7 @@ import { DimensionsComponent } from './customcomponents/dimensions/dimensions.co
 import { ParagraphsComponent } from './customcomponents/paragraphs/paragraphs.component';
 import { ProductsPageComponent } from './webshop/Product/products-page/products-page.component';
 import { NavbarComponent } from './customcomponents/navbar/navbar.component';
-import {NgbDropdownModule} from '@ng-bootstrap/ng-bootstrap';
+import {NgbCollapseModule, NgbDropdownModule} from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -24,12 +24,13 @@ import {NgbDropdownModule} from '@ng-bootstrap/ng-bootstrap';
     ProductsPageComponent,
     NavbarComponent
   ],
-    imports: [
-        BrowserModule,
-        AppRoutingModule,
-        IvyGalleryModule,
-        NgbDropdownModule
-    ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    IvyGalleryModule,
+    NgbDropdownModule,
+    NgbCollapseModule
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })

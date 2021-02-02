@@ -1,4 +1,5 @@
 import {ProductDTO} from './product';
+import {Observable} from 'rxjs';
 
 export class CartDTO {
   id: number;
@@ -29,6 +30,11 @@ export class Cart {
     this.id = cartDTO.id;
     this.productDTOs = cartDTO.productDTOs;
     this.calculatePrice();
+  }
+
+  // tslint:disable-next-line:typedef
+  getProductsFromCar() {
+    return this.productDTOs;
   }
 
   // tslint:disable-next-line:typedef
