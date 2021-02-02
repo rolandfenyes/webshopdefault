@@ -1,7 +1,7 @@
 <body>
   <ul>
     <li *ngFor="let product of products; index as i">
-      <app-overview-block (click)="navigateToProductPage(i)" [product]="product" [onProductsPage]="true"></app-overview-block>
+      <app-overview-block [index]="i" [product]="product" [onProductsPage]="true"></app-overview-block>
     </li>
   </ul>
 </body>

@@ -1,5 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {ProductDTO} from '../../model/product';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-overview-block',
@@ -14,10 +15,13 @@ export class OverviewBlockComponent implements OnInit {
   @Input()
   onProductsPage: boolean;
 
+  @Input()
+  index: number;
+
   amount: number;
   price: string;
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
     this.amount = 1;
@@ -50,6 +54,11 @@ export class OverviewBlockComponent implements OnInit {
       this.amount -= 1;
     }
     this.recalculatePrice();
+  }
+
+  // tslint:disable-next-line:typedef
+  navigateToProductPage() {
+    this.router.navigateByUrl('product/' + this.index);
   }
 
 }

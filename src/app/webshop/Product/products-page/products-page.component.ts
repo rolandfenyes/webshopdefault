@@ -12,15 +12,10 @@ export class ProductsPageComponent implements OnInit {
 
   products: ProductDTO[];
 
-  constructor(private router: Router) { }
+  constructor() { }
 
   ngOnInit(): void {
     this.products = DummyData.getInstance().getProducts();
-  }
-
-  // tslint:disable-next-line:typedef
-  navigateToProductPage(index: number) {
-    this.router.navigateByUrl('product/' + index);
   }
 
 }
