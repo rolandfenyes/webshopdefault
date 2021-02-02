@@ -6,7 +6,7 @@ table {
 }
 
 .first-row {
-  height: 100px;
+  height: 0px;
 }
 
 .side-containers {
@@ -14,18 +14,21 @@ table {
 }
 
 .padding-top {
-  padding-top: 100px;
+  padding-top: 0px;
 }
 
 p, h1 {
-  padding-left: 50px;
-  padding-right: 50px;
+  padding-left: 25px;
+  padding-right: 25px;
 }
 
 th {
   width: 20%;
 }
 
+.dimensions {
+  width: 90%;
+}
 
 @media only screen and (max-width: 1019px) {
   table, th, td {
