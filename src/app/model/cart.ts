@@ -57,7 +57,7 @@ export class Cart {
   // tslint:disable-next-line:typedef
   calculatePrice() {
     this.productDTOs.forEach(product => {
-      this.priceInHUF += product.priceInHUF;
+      this.priceInHUF += (product.priceInHUF * product.amount);
       }
     );
   }

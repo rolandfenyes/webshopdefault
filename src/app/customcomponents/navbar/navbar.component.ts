@@ -24,4 +24,9 @@ export class NavbarComponent implements OnInit {
     this.router.navigateByUrl('/my-cart');
   }
 
+  // tslint:disable-next-line:typedef
+  navigateToPage(page: string) {
+    this.router.navigateByUrl('/' + page);
+  }
+
 }

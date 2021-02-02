@@ -5,7 +5,7 @@ export class DummyData {
 
   private constructor() {
     this.products = [];
-    for (let i = 0; i < 10; i++) {
+    for (let i = 1; i <= 10; i++) {
       this.createNewProduct(i, i);
     }
     Cart.getInstance().addToCart(this.products[0]);
