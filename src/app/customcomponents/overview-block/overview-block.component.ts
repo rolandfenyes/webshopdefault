@@ -2,6 +2,7 @@ import {Component, Input, OnInit} from '@angular/core';
 import {ProductDTO} from '../../model/product';
 import {Router} from '@angular/router';
 import {Cart} from '../../model/cart';
+import {recalculatePrice} from '../../model/CurrencyFormatter';
 
 @Component({
   selector: 'app-overview-block',
@@ -24,27 +25,19 @@ export class OverviewBlockComponent implements OnInit {
 
   constructor(private router: Router) { }
 
-  ngOnInit(): void {
+  // @ts-ignore
+  ngOnInit(amount, priceInHUF): void {
     this.amount = 1;
-    this.recalculatePrice();
+    this.price = recalculatePrice(this.amount, this.product.priceInHUF);
   }
 
   // tslint:disable-next-line:typedef
-  recalculatePrice() {
-    const totalPrice = this.amount * this.product.priceInHUF;
-    // tslint:disable-next-line:prefer-const
-    let formatter = new Intl.NumberFormat('hu-HU', {
-      style: 'currency',
-      currency: 'HUF',
-      minimumFractionDigits: 0,
-    });
-    this.price = formatter.format(totalPrice);
-  }
+
 
   // tslint:disable-next-line:typedef
   increaseAmount() {
     this.amount += 1;
-    this.recalculatePrice();
+    this.price = recalculatePrice(this.amount, this.product.priceInHUF);
   }
 
   // tslint:disable-next-line:typedef
@@ -54,7 +47,7 @@ export class OverviewBlockComponent implements OnInit {
     } else {
       this.amount -= 1;
     }
-    this.recalculatePrice();
+    this.price = recalculatePrice(this.amount, this.product.priceInHUF);
   }
 
   // tslint:disable-next-line:typedef

@@ -1,0 +1,8 @@
+<body>
+  <h1>
+    Cart
+  </h1>
+  <div *ngFor="let product of productsInCart; index as i">
+    <app-product-cart-line [product]="productsInCart[i]"></app-product-cart-line>
+  </div>
+</body>

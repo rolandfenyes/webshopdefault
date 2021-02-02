@@ -5,9 +5,11 @@ export class DummyData {
 
   private constructor() {
     this.products = [];
-    this.createNewProduct();
-    this.createNewProduct();
-    this.createNewProduct();
+    for (let i = 0; i < 10; i++) {
+      this.createNewProduct(i, i);
+    }
+    Cart.getInstance().addToCart(this.products[0]);
+    Cart.getInstance().addToCart(this.products[1]);
   }
   private static instance: DummyData;
 
@@ -22,7 +24,7 @@ export class DummyData {
   }
 
   // tslint:disable-next-line:typedef
-  createNewProduct() {
+  createNewProduct(id: number, amount: number) {
     const product = new ProductDTO();
     const dimensions = new DimensionsDTO();
     dimensions.widthInMetre = 1.7;
@@ -41,8 +43,9 @@ export class DummyData {
     picture4.url = '../../../../assets/jatszoter_4.jpg';
     product.pictureURLs = [picture1, picture2, picture3, picture4, picture1];
     product.productName = 'Penthouse';
-    product.id = 0;
+    product.id = id;
     product.priceInHUF = 230000;
+    product.amount = amount;
     product.description = 'Főbb tulajdonságok:\n' +
                           ' - faház + terasz, 2 ablakkal, ajtóval\n' +
       ' - faanyag: borovi fenyő, gomba- és penészvédelemmel\n' +

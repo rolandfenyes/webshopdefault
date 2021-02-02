@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Cart} from '../../model/cart';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
@@ -13,9 +14,14 @@ export class NavbarComponent implements OnInit {
   isCartEmpty: boolean;
   cartLength: number;
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
+  }
+
+  // tslint:disable-next-line:typedef
+  navigateToCartPage() {
+    this.router.navigateByUrl('/my-cart');
   }
 
 }

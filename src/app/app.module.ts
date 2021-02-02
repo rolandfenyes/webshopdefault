@@ -12,6 +12,8 @@ import { ParagraphsComponent } from './customcomponents/paragraphs/paragraphs.co
 import { ProductsPageComponent } from './webshop/Product/products-page/products-page.component';
 import { NavbarComponent } from './customcomponents/navbar/navbar.component';
 import {NgbCollapseModule, NgbDropdownModule} from '@ng-bootstrap/ng-bootstrap';
+import { CartPageComponent } from './webshop/Cart/cart-page/cart-page.component';
+import { ProductCartLineComponent } from './customcomponents/product-cart-line/product-cart-line.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import {NgbCollapseModule, NgbDropdownModule} from '@ng-bootstrap/ng-bootstrap';
     DimensionsComponent,
     ParagraphsComponent,
     ProductsPageComponent,
-    NavbarComponent
+    NavbarComponent,
+    CartPageComponent,
+    ProductCartLineComponent
   ],
   imports: [
     BrowserModule,
