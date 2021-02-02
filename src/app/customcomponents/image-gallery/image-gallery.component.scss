@@ -1,10 +1,10 @@
 body {
-  width: 500px;
+  width: 20vw;
   height: 500px;
 }
 
 .main-image {
-  max-width: 400px;
+  max-width: 18vw;
   max-height: 400px;
 }
 
@@ -32,12 +32,12 @@ ul li {
 
 @media only screen and (max-width: 1019px) {
   body {
-    width: 100vw;
+    width: 80vw;
     height: auto;
   }
 
   .main-image {
-    max-width: 90vw;
+    max-width: 80vw;
     height: auto;
   }
 
