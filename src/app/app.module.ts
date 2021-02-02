@@ -10,6 +10,8 @@ import { OverviewBlockComponent } from './customcomponents/overview-block/overvi
 import { DimensionsComponent } from './customcomponents/dimensions/dimensions.component';
 import { ParagraphsComponent } from './customcomponents/paragraphs/paragraphs.component';
 import { ProductsPageComponent } from './webshop/Product/products-page/products-page.component';
+import { NavbarComponent } from './customcomponents/navbar/navbar.component';
+import {NgbDropdownModule} from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -19,13 +21,15 @@ import { ProductsPageComponent } from './webshop/Product/products-page/products-
     OverviewBlockComponent,
     DimensionsComponent,
     ParagraphsComponent,
-    ProductsPageComponent
+    ProductsPageComponent,
+    NavbarComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    IvyGalleryModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        IvyGalleryModule,
+        NgbDropdownModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })
