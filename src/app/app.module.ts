@@ -15,6 +15,7 @@ import {NgbCollapseModule, NgbDropdownModule} from '@ng-bootstrap/ng-bootstrap';
 import { CartPageComponent } from './webshop/Cart/cart-page/cart-page.component';
 import { ProductCartLineComponent } from './customcomponents/product-cart-line/product-cart-line.component';
 import { FilterComponent } from './customcomponents/filter/filter.component';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { FilterComponent } from './customcomponents/filter/filter.component';
     AppRoutingModule,
     IvyGalleryModule,
     NgbDropdownModule,
-    NgbCollapseModule
+    NgbCollapseModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

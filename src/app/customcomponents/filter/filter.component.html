@@ -1,1 +1,68 @@
-<p>filter works!</p>
+<body>
+  <table>
+    <tr>
+      <th>
+        Filters
+      </th>
+    </tr>
+    <tr class="border-top">
+      <td>
+        <form>
+          <div class="form-group">
+            <label for="priceRange">Price</label>
+            <input [ngModelOptions]="{standalone: true}" step="5000" min="0" max="300000" [(ngModel)]="priceNumber" (ngModelChange)="onRangeValueChange($event, filterEnum.PRICE)" value="50000" type="range" class="slider form-control-range" id="priceRange">
+            <label>{{price}}</label>
+          </div>
+        </form>
+      </td>
+    </tr>
+    <tr class="border-top">
+      <td>
+        <form>
+          <div class="form-group">
+            <label for="widthRange">Width (m)</label>
+            <input [ngModelOptions]="{standalone: true}" step="0.5" min="0" max="3" [(ngModel)]="widthNumber" (ngModelChange)="onRangeValueChange($event, filterEnum.WIDTH)" value="50000" type="range" class="slider form-control-range" id="widthRange">
+            <label>{{widthNumber}} m</label>
+          </div>
+        </form>
+      </td>
+    </tr>
+    <tr class="border-top">
+      <td>
+        <form>
+          <div class="form-group">
+            <label for="heightRange">Height (m)</label>
+            <input [ngModelOptions]="{standalone: true}" step="0.5" min="0" max="3" [(ngModel)]="heightNumber" (ngModelChange)="onRangeValueChange($event, filterEnum.HEIGHT)" value="50000" type="range" class="slider form-control-range" id="heightRange">
+            <label>{{heightNumber}} m</label>
+          </div>
+        </form>
+      </td>
+    </tr>
+    <tr class="border-top">
+      <td>
+        <form>
+          <div class="form-group">
+            <label for="depthRange">Depth (m)</label>
+            <input [ngModelOptions]="{standalone: true}" step="0.5" min="0" max="3" [(ngModel)]="depthNumber" (ngModelChange)="onRangeValueChange($event, filterEnum.DEPTH)" value="50000" type="range" class="slider form-control-range" id="depthRange">
+            <label>{{depthNumber}} m</label>
+          </div>
+        </form>
+      </td>
+    </tr>
+    <tr class="border-top">
+      <td>
+        <label for="materialSelect">Material</label>
+        <select (change)="materialTypeValueChange()" [(ngModel)]="materialType" [ngModelOptions]="{standalone: true}" id="materialSelect" class="slider form-control form-control-sm">
+          <option></option>
+          <option>{{materialEnum.WOOD}}</option>
+          <option>{{materialEnum.PLASTIC}}</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <th class="last-row">
+        <button type="button" class="btn btn-secondary">Filter</button>
+      </th>
+    </tr>
+  </table>
+</body>
