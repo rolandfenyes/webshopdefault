@@ -1,7 +1,7 @@
 ul {
   padding-left: 0px;
   list-style: none;
-  width: 90vw;
+  width: 80vw;
   margin-left: auto;
   margin-right: auto;
   text-align: center;
@@ -10,4 +10,14 @@ ul {
 ul li {
   display: inline-block;
   padding: 25px;
+}
+
+table {
+  width: 90vw;
+  margin: 10px auto;
+}
+
+td {
+  width: 10vw;
+  min-width: 200px;
 }

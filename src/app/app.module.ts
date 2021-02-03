@@ -14,6 +14,7 @@ import { NavbarComponent } from './customcomponents/navbar/navbar.component';
 import {NgbCollapseModule, NgbDropdownModule} from '@ng-bootstrap/ng-bootstrap';
 import { CartPageComponent } from './webshop/Cart/cart-page/cart-page.component';
 import { ProductCartLineComponent } from './customcomponents/product-cart-line/product-cart-line.component';
+import { FilterComponent } from './customcomponents/filter/filter.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { ProductCartLineComponent } from './customcomponents/product-cart-line/p
     ProductsPageComponent,
     NavbarComponent,
     CartPageComponent,
-    ProductCartLineComponent
+    ProductCartLineComponent,
+    FilterComponent
   ],
   imports: [
     BrowserModule,
