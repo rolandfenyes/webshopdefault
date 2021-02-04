@@ -7,6 +7,17 @@
     </tr>
     <tr class="border-top">
       <td>
+        <label for="orderSelect">Order</label>
+        <select (change)="orderTypeValueChanged()" [(ngModel)]="orderType" [ngModelOptions]="{standalone: true}" id="orderSelect" class="slider order-type form-control form-control-sm">
+            <option>{{orderEnum.ALPHABETIC_ORDER}}</option>
+            <option>{{orderEnum.ALPHABETIC_ORDER_BACKWARD}}</option>
+            <option>{{orderEnum.PRICE_ORDER}}</option>
+            <option>{{orderEnum.PRICE_ORDER_2}}</option>
+        </select>
+      </td>
+    </tr>
+    <tr class="border-top">
+      <td>
         <form>
           <div class="form-group">
             <label for="priceRange">Price</label>

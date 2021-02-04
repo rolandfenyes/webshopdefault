@@ -10,14 +10,15 @@ export class FilterComponent implements OnInit {
 
   filterEnum = FilterEnum;
   materialEnum = MaterialType;
+  public orderEnum = OrderEnum;
 
   priceNumber: number;
   price: string;
   widthNumber: number;
   heightNumber: number;
   depthNumber: number;
-  material: string;
   materialType: MaterialType;
+  orderType: OrderEnum;
 
   constructor() { }
 
@@ -26,6 +27,7 @@ export class FilterComponent implements OnInit {
     this.heightNumber = 1.5;
     this.depthNumber = 1.5;
     this.price = recalculatePrice(1, 150000);
+    this.orderType = OrderEnum.PRICE_ORDER;
   }
 
 
@@ -49,6 +51,18 @@ export class FilterComponent implements OnInit {
 
   }
 
+  // tslint:disable-next-line:typedef
+  orderTypeValueChanged() {
+
+  }
+
+}
+
+export enum OrderEnum {
+  ALPHABETIC_ORDER = 'Név, A - Z',
+  ALPHABETIC_ORDER_BACKWARD = 'Név, Z - A',
+  PRICE_ORDER = 'Ár, alacsony -> magas',
+  PRICE_ORDER_2 = 'Ár, magas -> alacsony'
 }
 
 export enum MaterialType {
