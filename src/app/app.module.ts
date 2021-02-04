@@ -16,6 +16,7 @@ import { CartPageComponent } from './webshop/Cart/cart-page/cart-page.component'
 import { ProductCartLineComponent } from './customcomponents/product-cart-line/product-cart-line.component';
 import { FilterComponent } from './customcomponents/filter/filter.component';
 import {FormsModule} from '@angular/forms';
+import { FooterComponent } from './customcomponents/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import {FormsModule} from '@angular/forms';
     NavbarComponent,
     CartPageComponent,
     ProductCartLineComponent,
-    FilterComponent
+    FilterComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
