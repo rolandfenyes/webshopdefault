@@ -28,6 +28,7 @@ export class ProductCartLineComponent implements OnInit {
   increaseAmount() {
     this.product.amount += 1;
     this.priceInTotal = recalculatePrice(this.product.amount, this.product.priceInHUF);
+    Cart.getInstance().calculatePrice();
   }
 
   // tslint:disable-next-line:typedef
@@ -38,6 +39,7 @@ export class ProductCartLineComponent implements OnInit {
       this.product.amount -= 1;
     }
     this.priceInTotal = recalculatePrice(this.product.amount, this.product.priceInHUF);
+    Cart.getInstance().calculatePrice();
   }
 
   // tslint:disable-next-line:typedef

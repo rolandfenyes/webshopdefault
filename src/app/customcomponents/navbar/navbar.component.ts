@@ -11,12 +11,13 @@ export class NavbarComponent implements OnInit {
 
   isCollapsed = false;
   navbarDropdown = false;
-  isCartEmpty: boolean;
+  isCartEmpty = Cart.getInstance().getProductsFromCar().length === 0;
   cartLength: number;
 
   constructor(private router: Router) { }
 
   ngOnInit(): void {
+    Cart.getInstance().setNavbarComponent(this);
   }
 
   // tslint:disable-next-line:typedef

@@ -14,11 +14,12 @@ export class CartPageComponent implements OnInit {
   // TODO dynamic refresh
 
   productsInCart = Cart.getInstance().getProductsFromCar();
-  totalPriceInHUF: string;
+  totalPriceInHUF = '';
 
   constructor(private router: Router) { }
 
   ngOnInit(): void {
+    Cart.getInstance().setCartPageComponent(this);
     DummyData.getInstance();
     this.totalPriceInHUF = recalculatePrice(1, Cart.getInstance().priceInHUF);
   }

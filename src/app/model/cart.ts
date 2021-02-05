@@ -1,5 +1,8 @@
 import {ProductDTO} from './product';
 import {Observable} from 'rxjs';
+import {NavbarComponent} from '../customcomponents/navbar/navbar.component';
+import {CartPageComponent} from '../webshop/Cart/cart-page/cart-page.component';
+import {recalculatePrice} from './CurrencyFormatter';
 
 export class CartDTO {
   id: number;
@@ -17,6 +20,8 @@ export class Cart {
   id: number;
   productDTOs: ProductDTO[];
   priceInHUF: number;
+  navbar: NavbarComponent;
+  cartPage: CartPageComponent;
 
   public static getInstance(): Cart {
     if (!Cart.instance) {
@@ -33,6 +38,16 @@ export class Cart {
   }
 
   // tslint:disable-next-line:typedef
+  setCartPageComponent(cartPage) {
+    this.cartPage = cartPage;
+  }
+
+  // tslint:disable-next-line:typedef
+  setNavbarComponent(navbar) {
+    this.navbar = navbar;
+  }
+
+  // tslint:disable-next-line:typedef
   getProductsFromCar() {
     return this.productDTOs;
   }
@@ -46,20 +61,28 @@ export class Cart {
   addToCart(product: ProductDTO) {
     this.productDTOs.push(product);
     this.calculatePrice();
+    this.navbar.isCartEmpty = this.productDTOs.length === 0;
   }
 
   // tslint:disable-next-line:typedef
   removeFromCart(product: ProductDTO) {
     this.productDTOs.splice(this.productDTOs.indexOf(product), 1);
     this.calculatePrice();
+    this.navbar.isCartEmpty = this.productDTOs.length === 0;
   }
 
   // tslint:disable-next-line:typedef
   calculatePrice() {
+    this.priceInHUF = 0;
     this.productDTOs.forEach(product => {
       this.priceInHUF += (product.priceInHUF * product.amount);
       }
     );
+    try {
+      this.cartPage.totalPriceInHUF = recalculatePrice(1, this.priceInHUF);
+    } catch (Exception) {
+
+    }
   }
 }
 
