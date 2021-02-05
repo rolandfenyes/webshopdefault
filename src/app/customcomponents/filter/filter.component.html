@@ -1,5 +1,5 @@
 <body>
-  <table>
+  <table class="filter">
     <tr>
       <th>
         Filters
@@ -21,7 +21,7 @@
         <form>
           <div class="form-group">
             <label for="priceRange">Price</label>
-            <input [ngModelOptions]="{standalone: true}" step="5000" min="0" max="300000" [(ngModel)]="priceNumber" (ngModelChange)="onRangeValueChange($event, filterEnum.PRICE)" value="50000" type="range" class="slider form-control-range" id="priceRange">
+            <input [ngModelOptions]="{standalone: true}" step="5000" min="0" max="300000" [(ngModel)]="priceNumber" (ngModelChange)="onRangeValueChange($event, filterEnum.PRICE)" value="50000" type="range" class="custom-range slider form-control-range" id="priceRange">
             <label>{{price}}</label>
           </div>
         </form>
@@ -32,7 +32,7 @@
         <form>
           <div class="form-group">
             <label for="widthRange">Width (m)</label>
-            <input [ngModelOptions]="{standalone: true}" step="0.5" min="0" max="3" [(ngModel)]="widthNumber" (ngModelChange)="onRangeValueChange($event, filterEnum.WIDTH)" value="50000" type="range" class="slider form-control-range" id="widthRange">
+            <input [ngModelOptions]="{standalone: true}" step="0.5" min="0" max="3" [(ngModel)]="widthNumber" (ngModelChange)="onRangeValueChange($event, filterEnum.WIDTH)" value="50000" type="range" class="custom-range slider form-control-range" id="widthRange">
             <label>{{widthNumber}} m</label>
           </div>
         </form>
@@ -43,7 +43,7 @@
         <form>
           <div class="form-group">
             <label for="heightRange">Height (m)</label>
-            <input [ngModelOptions]="{standalone: true}" step="0.5" min="0" max="3" [(ngModel)]="heightNumber" (ngModelChange)="onRangeValueChange($event, filterEnum.HEIGHT)" value="50000" type="range" class="slider form-control-range" id="heightRange">
+            <input [ngModelOptions]="{standalone: true}" step="0.5" min="0" max="3" [(ngModel)]="heightNumber" (ngModelChange)="onRangeValueChange($event, filterEnum.HEIGHT)" value="50000" type="range" class="custom-range slider form-control-range" id="heightRange">
             <label>{{heightNumber}} m</label>
           </div>
         </form>
@@ -54,7 +54,7 @@
         <form>
           <div class="form-group">
             <label for="depthRange">Depth (m)</label>
-            <input [ngModelOptions]="{standalone: true}" step="0.5" min="0" max="3" [(ngModel)]="depthNumber" (ngModelChange)="onRangeValueChange($event, filterEnum.DEPTH)" value="50000" type="range" class="slider form-control-range" id="depthRange">
+            <input [ngModelOptions]="{standalone: true}" step="0.5" min="0" max="3" [(ngModel)]="depthNumber" (ngModelChange)="onRangeValueChange($event, filterEnum.DEPTH)" value="50000" type="range" class="custom-range slider form-control-range" id="depthRange">
             <label>{{depthNumber}} m</label>
           </div>
         </form>

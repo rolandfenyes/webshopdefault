@@ -3,7 +3,6 @@ body {
 }
 
 table {
-  background-color: #f8f9fa !important;
   width: 200px;
   border-radius: 10px;
 }
@@ -24,4 +23,14 @@ th, td {
 .last-row {
   padding-bottom: 10px;
   padding-top: 10px;
+}
+
+input[type=range]::-webkit-slider-thumb {
+  background: #1F67C4;
+}
+input[type=range]::-moz-range-thumb {
+  background: #1F67C4;
+}
+input[type=range]::-ms-thumb {
+  background: #1F67C4;
 }

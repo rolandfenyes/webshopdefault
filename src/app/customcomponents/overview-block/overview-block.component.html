@@ -1,4 +1,5 @@
-<div *ngIf="onProductsPage" class="details mb-3" style="width: 18rem;">
+<div *ngIf="onProductsPage" class="details" style="width: 18rem;">
+
   <img (click)="navigateToProductPage()" src="{{product.pictureURLs[0].url}}" class="card-img-top" alt="...">
   <div (click)="navigateToProductPage()" class="card-body">
     <h5 class="card-title">{{product.productName}}</h5>
@@ -17,8 +18,8 @@
       <tr>
         <th>
           <div class="btn-group" role="group" aria-label="First group">
-            <button (click)="decreaseAmount()" type="button" class="btn btn-secondary">-</button>
-            <button (click)="increaseAmount()" type="button" class="btn btn-secondary">+</button>
+            <button (click)="decreaseAmount()" type="button" class="btn">-</button>
+            <button (click)="increaseAmount()" type="button" class="btn">+</button>
           </div>
         </th>
         <th>

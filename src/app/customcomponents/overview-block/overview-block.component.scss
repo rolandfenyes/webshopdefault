@@ -14,15 +14,20 @@ th {
 .details,  {
   background-color: #f8f9fa;
   transition: .5s;
+  border-radius: 10px;
 }
 
 .details:hover {
   z-index: 100;
-  background-color: rgba(0, 0, 0, .3);
   transition: .5s;
   cursor: pointer;
 }
 
 button {
   z-index: 99;
+}
+
+img {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 }
