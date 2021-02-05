@@ -1,0 +1,28 @@
+table {
+  width: 100%;
+}
+th {
+  width: 50%;
+  text-align: center;
+}
+
+.list-colour {
+  background-color: transparent;
+  text-align: center;
+}
+
+.details,  {
+  background-color: #f8f9fa;
+  transition: .5s;
+}
+
+.details:hover {
+  z-index: 100;
+  background-color: rgba(0, 0, 0, .3);
+  transition: .5s;
+  cursor: pointer;
+}
+
+button {
+  z-index: 99;
+}

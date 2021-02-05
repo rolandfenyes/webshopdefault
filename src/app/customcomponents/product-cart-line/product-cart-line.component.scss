@@ -1,0 +1,38 @@
+img {
+  width: 100px;
+  max-height: 100px;
+}
+
+table {
+  width: 60vw;
+  height: 120px;
+  margin: 10px auto;
+}
+
+td {
+  width: 20%;
+}
+
+td, th {
+  text-align: center;
+}
+
+.last {
+  width: 60px;
+}
+
+.amount {
+  width: 100px;
+}
+
+.amount1 {
+  text-align: right;
+}
+
+.amount2 {
+  text-align: left;
+}
+
+.clickable {
+  cursor: pointer;
+}

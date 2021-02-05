@@ -1,0 +1,30 @@
+body {
+  width: 100%;
+  height: 300px;
+  background-color: #f8f9fa;
+  padding-top: 50px;
+}
+
+table {
+  width: 60vw;
+  margin: 0px auto;
+}
+
+td {
+  width: 33.33%;
+  text-align: left;
+}
+
+td p {
+  text-align: center !important;
+}
+
+.page-end {
+  vertical-align: bottom;
+  height: 5%;
+}
+
+.first-row {
+  height: 210px;
+  vertical-align: top;
+}

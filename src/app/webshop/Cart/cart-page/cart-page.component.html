@@ -1,0 +1,55 @@
+<body>
+  <table>
+    <tr>
+      <th colspan="6">
+        <h1>
+          Cart
+        </h1>
+      </th>
+    </tr>
+    <tr>
+      <th class="picture">
+        Picture
+      </th>
+      <td>
+        Product name
+      </td>
+      <td>
+        Price
+      </td>
+      <td class="amount">
+        Amount
+      </td>
+      <td>
+        Price in total
+      </td>
+      <td class="last">
+        Remove
+      </td>
+    </tr>
+    <tr>
+      <th colspan="6">
+        <div *ngFor="let product of productsInCart; index as i">
+          <app-product-cart-line [product]="productsInCart[i]"></app-product-cart-line>
+        </div>
+      </th>
+    </tr>
+    <tr>
+      <th class="return-to-webshop" colspan="3">
+        <button (click)="navigateToPage('')" class="btn btn-light">
+          Return to webshop
+        </button>
+      </th>
+      <th class="checkout" colspan="3">
+        <h1>
+          Sum: {{totalPriceInHUF}}
+        </h1>
+        <button class="btn btn-secondary">
+          Proceed to checkout
+        </button>
+      </th>
+    </tr>
+  </table>
+
+
+</body>

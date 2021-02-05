@@ -1,0 +1,37 @@
+<body>
+  <table>
+    <tr>
+      <td colspan="5">
+        <h1>{{product.productName}}</h1>
+      </td>
+    </tr>
+    <tr class="first-row">
+      <th rowspan="3" class="side-containers padding-top">
+        <app-image-gallery [pictureURLDTOs]="product.pictureURLs"></app-image-gallery>
+      </th>
+      <th colspan="3"></th>
+      <th rowspan="3" class="side-containers padding-top">
+        <app-overview-block [product]="product"></app-overview-block>
+      </th>
+    </tr>
+    <tr class="second-row">
+      <td colspan="3" class="side-containers">
+        <h3>
+          Leírás
+        </h3>
+        <app-paragraphs [text]="product.description"></app-paragraphs>
+      </td>
+    </tr>
+    <tr>
+      <th colspan="2" class="dimensions">
+        <h5>
+          Méretek
+        </h5>
+        <app-dimensions class="dimension-container" [productDimensions]="product.dimensions"></app-dimensions>
+      </th>
+      <th></th>
+    </tr>
+  </table>
+</body>
+
+

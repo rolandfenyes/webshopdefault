@@ -1,0 +1,16 @@
+<body>
+<table>
+  <tr>
+    <td>
+      <app-filter [parent]="productsPage"></app-filter>
+    </td>
+    <th>
+      <ul>
+        <li *ngFor="let product of productsShown; index as i">
+          <app-overview-block [index]="i" [product]="product" [onProductsPage]="true"></app-overview-block>
+        </li>
+      </ul>
+    </th>
+  </tr>
+</table>
+</body>
