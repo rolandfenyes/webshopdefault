@@ -56,6 +56,11 @@ export class FilterComponent implements OnInit {
   }
 
   // tslint:disable-next-line:typedef
+  filterButtonPressed() {
+    this.parent.filterProducts(this.priceNumber, this.widthNumber, this.heightNumber, this.depthNumber, this.materialType);
+  }
+
+  // tslint:disable-next-line:typedef
   orderTypeValueChanged() {
     this.parent.orderProductsBy(this.orderType);
   }

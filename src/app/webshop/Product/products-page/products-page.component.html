@@ -6,7 +6,7 @@
     </td>
     <th>
       <ul>
-        <li *ngFor="let product of products; index as i">
+        <li *ngFor="let product of productsShown; index as i">
           <app-overview-block [index]="i" [product]="product" [onProductsPage]="true"></app-overview-block>
         </li>
       </ul>
