@@ -2,12 +2,12 @@
   <table class="filter">
     <tr>
       <th>
-        Filters
+        Szűrők
       </th>
     </tr>
     <tr class="border-top">
       <td>
-        <label for="orderSelect">Order</label>
+        <label for="orderSelect">Rendezés</label>
         <select (change)="orderTypeValueChanged()" [(ngModel)]="orderType" [ngModelOptions]="{standalone: true}" id="orderSelect" class="slider order-type form-control form-control-sm">
             <option>{{orderEnum.ALPHABETIC_ORDER}}</option>
             <option>{{orderEnum.ALPHABETIC_ORDER_BACKWARD}}</option>
@@ -20,7 +20,7 @@
       <td>
         <form>
           <div class="form-group">
-            <label for="priceRange">Price</label>
+            <label for="priceRange">Ár (Ft)</label>
             <input [ngModelOptions]="{standalone: true}" step="5000" min="0" max="300000" [(ngModel)]="priceNumber" (ngModelChange)="onRangeValueChange($event, filterEnum.PRICE)" value="50000" type="range" class="custom-range slider form-control-range" id="priceRange">
             <label>{{price}}</label>
           </div>
@@ -31,7 +31,7 @@
       <td>
         <form>
           <div class="form-group">
-            <label for="widthRange">Width (m)</label>
+            <label for="widthRange">Szélesség (m)</label>
             <input [ngModelOptions]="{standalone: true}" step="0.5" min="0" max="3" [(ngModel)]="widthNumber" (ngModelChange)="onRangeValueChange($event, filterEnum.WIDTH)" value="50000" type="range" class="custom-range slider form-control-range" id="widthRange">
             <label>{{widthNumber}} m</label>
           </div>
@@ -42,7 +42,7 @@
       <td>
         <form>
           <div class="form-group">
-            <label for="heightRange">Height (m)</label>
+            <label for="heightRange">Magasság (m)</label>
             <input [ngModelOptions]="{standalone: true}" step="0.5" min="0" max="3" [(ngModel)]="heightNumber" (ngModelChange)="onRangeValueChange($event, filterEnum.HEIGHT)" value="50000" type="range" class="custom-range slider form-control-range" id="heightRange">
             <label>{{heightNumber}} m</label>
           </div>
@@ -53,7 +53,7 @@
       <td>
         <form>
           <div class="form-group">
-            <label for="depthRange">Depth (m)</label>
+            <label for="depthRange">Mélység (m)</label>
             <input [ngModelOptions]="{standalone: true}" step="0.5" min="0" max="3" [(ngModel)]="depthNumber" (ngModelChange)="onRangeValueChange($event, filterEnum.DEPTH)" value="50000" type="range" class="custom-range slider form-control-range" id="depthRange">
             <label>{{depthNumber}} m</label>
           </div>
@@ -62,7 +62,7 @@
     </tr>
     <tr class="border-top">
       <td>
-        <label for="materialSelect">Material</label>
+        <label for="materialSelect">Anyag</label>
         <select (change)="materialTypeValueChange()" [(ngModel)]="materialType" [ngModelOptions]="{standalone: true}" id="materialSelect" class="slider form-control form-control-sm">
           <option></option>
           <option>{{materialEnum.WOOD}}</option>
@@ -72,7 +72,7 @@
     </tr>
     <tr>
       <th class="last-row">
-        <button (click)="filterButtonPressed()" type="button" class="btn btn-secondary">Filter</button>
+        <button (click)="filterButtonPressed()" type="button" class="btn btn-secondary">Szűrés</button>
       </th>
     </tr>
   </table>

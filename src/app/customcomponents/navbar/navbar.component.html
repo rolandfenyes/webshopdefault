@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-dark">
-  <a class="navbar-brand" href="#">Navbar</a>
+  <a class="navbar-brand" href="#">FAbrakadabra</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" (click)="isCollapsed = !isCollapsed" [attr.aria-expanded]="!isCollapsed">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -7,14 +7,14 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent" [ngbCollapse]="isCollapsed">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="btn nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        <a class="btn nav-link" href="#">Főoldal<span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item active">
-        <a (click)="navigateToPage('products')" class="btn nav-link">Products <span class="sr-only">(current)</span></a>
+        <a (click)="navigateToPage('products')" class="btn nav-link">Termékek<span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item dropdown">
         <div ngbDropdown class="d-inline-block">
-          <button class="btn-dropdown btn" id="dropdownBasic1" ngbDropdownToggle>Dropdown</button>
+          <button class="btn-dropdown btn" id="dropdownBasic1" ngbDropdownToggle>Kategóriák</button>
           <div class="dropdown-menu" ngbDropdownMenu aria-labelledby="dropdownBasic1">
             <a ngbDropdownItem class="dropdown-item" href="#">Action</a>
             <a ngbDropdownItem class="dropdown-item" href="#">Another action</a>
@@ -23,8 +23,8 @@
       </li>
     </ul>
     <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn-with-border btn btn-outline-secondary" type="submit">Search</button>
+      <input class="form-control mr-sm-2" type="search" placeholder="Keresés" aria-label="Search">
+      <button class="btn-with-border btn btn-outline-secondary" type="submit">Keresés</button>
     </form>
     <button class="btn-with-border plus-buttons btn btn-outline-secondary" (click)="navigateToCartPage()">
       <div *ngIf="isCartEmpty">
