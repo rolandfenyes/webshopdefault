@@ -5,8 +5,9 @@ export class DummyData {
 
   private constructor() {
     this.products = [];
-    for (let i = 1; i <= 10; i++) {
-      this.createNewProduct(i, i);
+    const firstLetter = ['A', 'B', 'C', 'D'];
+    for (let i = 1; i <= 4; i++) {
+      this.createNewProduct(i, i, firstLetter[i - 1]);
     }
     Cart.getInstance().addToCart(this.products[0]);
     Cart.getInstance().addToCart(this.products[1]);
@@ -24,7 +25,7 @@ export class DummyData {
   }
 
   // tslint:disable-next-line:typedef
-  createNewProduct(id: number, amount: number) {
+  createNewProduct(id: number, amount: number, fLetter: string) {
     const product = new ProductDTO();
     const dimensions = new DimensionsDTO();
     dimensions.widthInMetre = 1.7;
@@ -42,9 +43,9 @@ export class DummyData {
     picture3.url = '../../../../assets/jatszoter_3.jpg';
     picture4.url = '../../../../assets/jatszoter_4.jpg';
     product.pictureURLs = [picture1, picture2, picture3, picture4, picture1];
-    product.productName = 'Penthouse';
+    product.productName = fLetter + 'Penthouse' + id.toString();
     product.id = id;
-    product.priceInHUF = 230000;
+    product.priceInHUF = 230000 + id;
     product.amount = amount;
     product.description = 'Főbb tulajdonságok:\n' +
                           ' - faház + terasz, 2 ablakkal, ajtóval\n' +

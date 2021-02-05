@@ -52,13 +52,12 @@ export class OverviewBlockComponent implements OnInit {
 
   // tslint:disable-next-line:typedef
   navigateToProductPage() {
-    this.router.navigateByUrl('product/' + this.index);
+    this.router.navigateByUrl('product/' + this.product.id);
   }
 
   // tslint:disable-next-line:typedef
   addElementToCart() {
     Cart.getInstance().addToCart(this.product);
-    console.log('yeah');
   }
 
 }

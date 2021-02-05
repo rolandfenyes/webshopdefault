@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {recalculatePrice} from '../../model/CurrencyFormatter';
+import {ProductsPageComponent} from '../../webshop/Product/products-page/products-page.component';
 
 @Component({
   selector: 'app-filter',
@@ -7,6 +8,9 @@ import {recalculatePrice} from '../../model/CurrencyFormatter';
   styleUrls: ['./filter.component.scss']
 })
 export class FilterComponent implements OnInit {
+
+  @Input()
+  parent: ProductsPageComponent;
 
   filterEnum = FilterEnum;
   materialEnum = MaterialType;
@@ -53,7 +57,7 @@ export class FilterComponent implements OnInit {
 
   // tslint:disable-next-line:typedef
   orderTypeValueChanged() {
-
+    this.parent.orderProductsBy(this.orderType);
   }
 
 }
