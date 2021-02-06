@@ -12,6 +12,8 @@ export class FilterComponent implements OnInit {
   @Input()
   parent: ProductsPageComponent;
 
+  isCollapsed = true;
+
   filterEnum = FilterEnum;
   materialEnum = MaterialType;
   public orderEnum = OrderEnum;

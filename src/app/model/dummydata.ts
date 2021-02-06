@@ -9,7 +9,7 @@ export class DummyData {
     this.categories = [];
     this.createNewCategory();
     const firstLetter = ['A', 'B', 'C', 'D'];
-    for (let i = 1; i <= 4; i++) {
+    for (let i = 1; i <= 20; i++) {
       this.createNewProduct(i, i, firstLetter[i - 1]);
     }
     Cart.getInstance().addToCart(this.products[0]);
@@ -30,8 +30,8 @@ export class DummyData {
 
   // tslint:disable-next-line:typedef
   createNewCategory() {
-    const categoryTypes = ['Játszóterek', 'Hinták', 'Csúszdák', 'asd'];
-    const categoryDomainTypes = ['jatszoterek', 'hintak', 'csuszdak', 'asd'];
+    const categoryTypes = ['Játszóterek', 'Hinták', 'Csúszdák'];
+    const categoryDomainTypes = ['jatszoterek', 'hintak', 'csuszdak'];
     for (let i = 0; i < categoryTypes.length; i++) {
       let category = new CategoryDTO();
       category.id = i;
@@ -78,6 +78,9 @@ export class DummyData {
       ' - paddá alakítható homokozó fedés (+20.000 Forint)\n' +
       ' - 80cm széles mászófal (+20,000 Forint)\n' +
       ' - dupla hintamodul akár 4 hintának (+25.000 Forint)';
+    if (id > 3) {
+      id = 1;
+    }
     product.categoryType = this.categories[id - 1].categoryName;
     this.products.push(product);
   }

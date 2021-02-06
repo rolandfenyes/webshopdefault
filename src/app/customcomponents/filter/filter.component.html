@@ -27,53 +27,70 @@
         </form>
       </td>
     </tr>
-    <tr class="border-top">
-      <td>
-        <form>
-          <div class="form-group">
-            <label for="widthRange">Szélesség (m)</label>
-            <input [ngModelOptions]="{standalone: true}" step="0.5" min="0" max="3" [(ngModel)]="widthNumber" (ngModelChange)="onRangeValueChange($event, filterEnum.WIDTH)" value="50000" type="range" class="custom-range slider form-control-range" id="widthRange">
-            <label>{{widthNumber}} m</label>
-          </div>
-        </form>
-      </td>
-    </tr>
-    <tr class="border-top">
-      <td>
-        <form>
-          <div class="form-group">
-            <label for="heightRange">Magasság (m)</label>
-            <input [ngModelOptions]="{standalone: true}" step="0.5" min="0" max="3" [(ngModel)]="heightNumber" (ngModelChange)="onRangeValueChange($event, filterEnum.HEIGHT)" value="50000" type="range" class="custom-range slider form-control-range" id="heightRange">
-            <label>{{heightNumber}} m</label>
-          </div>
-        </form>
-      </td>
-    </tr>
-    <tr class="border-top">
-      <td>
-        <form>
-          <div class="form-group">
-            <label for="depthRange">Mélység (m)</label>
-            <input [ngModelOptions]="{standalone: true}" step="0.5" min="0" max="3" [(ngModel)]="depthNumber" (ngModelChange)="onRangeValueChange($event, filterEnum.DEPTH)" value="50000" type="range" class="custom-range slider form-control-range" id="depthRange">
-            <label>{{depthNumber}} m</label>
-          </div>
-        </form>
-      </td>
-    </tr>
-    <tr class="border-top">
-      <td>
-        <label for="materialSelect">Anyag</label>
-        <select (change)="materialTypeValueChange()" [(ngModel)]="materialType" [ngModelOptions]="{standalone: true}" id="materialSelect" class="slider form-control form-control-sm">
-          <option></option>
-          <option>{{materialEnum.WOOD}}</option>
-          <option>{{materialEnum.PLASTIC}}</option>
-        </select>
-      </td>
-    </tr>
-    <tr>
-      <th class="last-row">
-        <button (click)="filterButtonPressed()" type="button" class="btn btn-secondary">Szűrés</button>
-      </th>
-    </tr>
+    <button class="details-btn toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" (click)="isCollapsed = !isCollapsed" [attr.aria-expanded]="!isCollapsed">
+      <div *ngIf="!isCollapsed">
+        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-arrow-up-circle-fill" viewBox="0 0 16 16">
+          <path d="M16 8A8 8 0 1 0 0 8a8 8 0 0 0 16 0zm-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707V11.5z"/>
+        </svg>
+      </div>
+      <div *ngIf="isCollapsed">
+        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-arrow-down-circle-fill" viewBox="0 0 16 16">
+          <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v5.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V4.5z"/>
+        </svg>
+      </div>
+    </button>
+    <div class="hidden-filters collapse navbar-collapse" id="navbarSupportedContent" [ngbCollapse]="isCollapsed">
+      <table>
+        <tr class="border-top">
+          <td>
+            <form>
+              <div class="form-group">
+                <label for="widthRange">Szélesség (m)</label>
+                <input [ngModelOptions]="{standalone: true}" step="0.5" min="0" max="3" [(ngModel)]="widthNumber" (ngModelChange)="onRangeValueChange($event, filterEnum.WIDTH)" value="50000" type="range" class="custom-range slider form-control-range" id="widthRange">
+                <label>{{widthNumber}} m</label>
+              </div>
+            </form>
+          </td>
+        </tr>
+        <tr class="border-top">
+          <td>
+            <form>
+              <div class="form-group">
+                <label for="heightRange">Magasság (m)</label>
+                <input [ngModelOptions]="{standalone: true}" step="0.5" min="0" max="3" [(ngModel)]="heightNumber" (ngModelChange)="onRangeValueChange($event, filterEnum.HEIGHT)" value="50000" type="range" class="custom-range slider form-control-range" id="heightRange">
+                <label>{{heightNumber}} m</label>
+              </div>
+            </form>
+          </td>
+        </tr>
+        <tr class="border-top">
+          <td>
+            <form>
+              <div class="form-group">
+                <label for="depthRange">Mélység (m)</label>
+                <input [ngModelOptions]="{standalone: true}" step="0.5" min="0" max="3" [(ngModel)]="depthNumber" (ngModelChange)="onRangeValueChange($event, filterEnum.DEPTH)" value="50000" type="range" class="custom-range slider form-control-range" id="depthRange">
+                <label>{{depthNumber}} m</label>
+              </div>
+            </form>
+          </td>
+        </tr>
+        <tr class="border-top">
+          <td>
+            <label for="materialSelect">Anyag</label>
+            <select (change)="materialTypeValueChange()" [(ngModel)]="materialType" [ngModelOptions]="{standalone: true}" id="materialSelect" class="slider form-control form-control-sm">
+              <option></option>
+              <option>{{materialEnum.WOOD}}</option>
+              <option>{{materialEnum.PLASTIC}}</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <th class="last-row">
+            <button (click)="filterButtonPressed()" type="button" class="btn btn-secondary">Szűrés</button>
+          </th>
+        </tr>
+      </table>
+
+    </div>
   </table>
 </body>

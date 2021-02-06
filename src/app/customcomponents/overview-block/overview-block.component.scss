@@ -9,10 +9,13 @@ th {
 .list-colour {
   background-color: transparent;
   text-align: center;
+  padding: 0px;
 }
 
 .details,  {
-  background-color: #f8f9fa;
+  //background-color: #f8f9fa;
+  background-color: transparent;
+  border-color: transparent;
   transition: .5s;
   border-radius: 10px;
 }
@@ -30,4 +33,16 @@ button {
 img {
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
+}
+
+.hidden {
+  display: none;
+}
+
+.card-body {
+  padding: 0px;
+}
+
+h5 {
+  padding-top: 20px;
 }

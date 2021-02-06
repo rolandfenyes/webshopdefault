@@ -1,10 +1,12 @@
 body {
   margin: 25px auto;
+  text-align: center;
 }
 
 table {
   width: 200px;
   border-radius: 10px;
+  text-align: center;
 }
 
 th, td {
@@ -25,12 +27,21 @@ th, td {
   padding-top: 10px;
 }
 
-input[type=range]::-webkit-slider-thumb {
-  background: #1F67C4;
+.details-btn {
+  background-color: transparent;
+  color: #2E8B57;
+  border: none;
+  transition: .4s;
+  padding-bottom: 20px;
 }
-input[type=range]::-moz-range-thumb {
-  background: #1F67C4;
+
+.details-btn:hover {
+  color: #002C00;
+  border: none;
+  transition: .4s;
 }
-input[type=range]::-ms-thumb {
-  background: #1F67C4;
+
+.hidden-filters {
+  width: 100%;
+  text-align: center;
 }

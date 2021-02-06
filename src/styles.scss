@@ -13,21 +13,21 @@ ul {
  */
 
 .navbar {
-  background-color: #1F67C4 !important;
+  background-color: #2E8B57 !important;
 }
 
 
 
 .btn {
-  background-color: #1F67C4;
+  background-color: #2E8B57;
   color: white;
-  border-color: #1F67C4;
+  border-color: #2E8B57;
   transition: .4s;
 }
 
 .btn:hover {
-  background-color: #00378B;
-  border-color: #00378B;
+  background-color: #008C63;
+  border-color: #008C63;
   color: white;
   transition: .4s;
 }
@@ -37,16 +37,30 @@ ul {
 }
 
 .details:hover {
-  background-color: #A6CFFF !important;
+  background-color: #D3FADF !important;
   transform: scale(1.01);
 }
 
 .footer {
-  background-color: #1F67C4 !important;
+  background-color: #2E8B57 !important;
   color: white !important;
   margin: 0;
 }
 
 .filter {
   background-color: #f8f9fa !important;
+}
+
+.title-row h1 {
+  color: #2E8B57 !important;
+}
+
+input[type=range]::-webkit-slider-thumb {
+  background: #2E8B57;
+}
+input[type=range]::-moz-range-thumb {
+  background: #2E8B57;
+}
+input[type=range]::-ms-thumb {
+  background: #2E8B57;
 }
