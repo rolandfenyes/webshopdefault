@@ -17,6 +17,7 @@ import { ProductCartLineComponent } from './customcomponents/product-cart-line/p
 import { FilterComponent } from './customcomponents/filter/filter.component';
 import {FormsModule} from '@angular/forms';
 import { FooterComponent } from './customcomponents/footer/footer.component';
+import { CategoriesComponent } from './customcomponents/categories/categories.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { FooterComponent } from './customcomponents/footer/footer.component';
     CartPageComponent,
     ProductCartLineComponent,
     FilterComponent,
-    FooterComponent
+    FooterComponent,
+    CategoriesComponent
   ],
   imports: [
     BrowserModule,

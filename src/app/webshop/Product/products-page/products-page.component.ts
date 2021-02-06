@@ -2,7 +2,8 @@ import {Component, OnInit} from '@angular/core';
 import {ProductDTO} from '../../../model/product';
 import {DummyData} from '../../../model/dummydata';
 import {OrderEnum} from '../../../customcomponents/filter/filter.component';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-products-page',
@@ -15,8 +16,15 @@ export class ProductsPageComponent implements OnInit {
   productsShown: ProductDTO[];
   productsPage = this;
   pageTitle: string;
+  category: string;
 
-  constructor(private route: ActivatedRoute) { }
+  constructor(private route: ActivatedRoute, private router: Router, private location: Location) {
+    this.router.events.subscribe(val => {
+      if (location.path() !== this.category) {
+        this.ngOnInit();
+      }
+    });
+  }
 
   ngOnInit(): void {
     const category = this.route.snapshot.paramMap.get('category');
@@ -24,12 +32,14 @@ export class ProductsPageComponent implements OnInit {
       this.products = DummyData.getInstance().getProducts();
       this.productsShown = this.products;
       this.pageTitle = 'Termékek';
+      this.category = category;
     } else {
       const categories = DummyData.getInstance().getCategories();
       const rightCategory = categories.filter(c => c.categoryInDomain === category);
       this.products = DummyData.getInstance().getProducts().filter(p => p.categoryType === rightCategory[0].categoryName);
       this.productsShown = this.products;
       this.pageTitle = rightCategory[0].categoryName;
+      this.category = '';
     }
   }
 
