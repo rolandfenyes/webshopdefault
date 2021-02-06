@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {ProductDTO} from '../../../model/product';
 import {DummyData} from '../../../model/dummydata';
 import {OrderEnum} from '../../../customcomponents/filter/filter.component';
+import {ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-products-page',
@@ -13,12 +14,23 @@ export class ProductsPageComponent implements OnInit {
   products: ProductDTO[];
   productsShown: ProductDTO[];
   productsPage = this;
+  pageTitle: string;
 
-  constructor() { }
+  constructor(private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.products = DummyData.getInstance().getProducts();
-    this.productsShown = this.products;
+    const category = this.route.snapshot.paramMap.get('category');
+    if (!category) {
+      this.products = DummyData.getInstance().getProducts();
+      this.productsShown = this.products;
+      this.pageTitle = 'Termékek';
+    } else {
+      const categories = DummyData.getInstance().getCategories();
+      const rightCategory = categories.filter(c => c.categoryInDomain === category);
+      this.products = DummyData.getInstance().getProducts().filter(p => p.categoryType === rightCategory[0].categoryName);
+      this.productsShown = this.products;
+      this.pageTitle = rightCategory[0].categoryName;
+    }
   }
 
   // tslint:disable-next-line:typedef

@@ -6,6 +6,7 @@ export class ProductDTO {
   pictureURLs: PictureURLDTO[];
   dimensions: DimensionsDTO;
   amount: number;
+  categoryType: string;
 }
 
 export class DimensionsDTO {

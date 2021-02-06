@@ -1,10 +1,13 @@
 import {DimensionsDTO, PictureURLDTO, ProductDTO} from './product';
 import {Cart} from './cart';
+import {CategoryDTO} from './category';
 
 export class DummyData {
 
   private constructor() {
     this.products = [];
+    this.categories = [];
+    this.createNewCategory();
     const firstLetter = ['A', 'B', 'C', 'D'];
     for (let i = 1; i <= 4; i++) {
       this.createNewProduct(i, i, firstLetter[i - 1]);
@@ -15,6 +18,7 @@ export class DummyData {
   private static instance: DummyData;
 
   private products: ProductDTO[];
+  private categories: CategoryDTO[];
 
   // tslint:disable-next-line:typedef
   public static getInstance() {
@@ -22,6 +26,19 @@ export class DummyData {
       this.instance = new DummyData();
     }
     return this.instance;
+  }
+
+  // tslint:disable-next-line:typedef
+  createNewCategory() {
+    const categoryTypes = ['Játszóterek', 'Hinták', 'Csúszdák', 'asd'];
+    const categoryDomainTypes = ['jatszoterek', 'hintak', 'csuszdak', 'asd'];
+    for (let i = 0; i < categoryTypes.length; i++) {
+      let category = new CategoryDTO();
+      category.id = i;
+      category.categoryName = categoryTypes[i];
+      category.categoryInDomain = categoryDomainTypes[i];
+      this.categories.push(category);
+    }
   }
 
   // tslint:disable-next-line:typedef
@@ -61,6 +78,7 @@ export class DummyData {
       ' - paddá alakítható homokozó fedés (+20.000 Forint)\n' +
       ' - 80cm széles mászófal (+20,000 Forint)\n' +
       ' - dupla hintamodul akár 4 hintának (+25.000 Forint)';
+    product.categoryType = this.categories[id - 1].categoryName;
     this.products.push(product);
   }
 
@@ -72,5 +90,10 @@ export class DummyData {
   // tslint:disable-next-line:typedef
   getProducts() {
     return this.products;
+  }
+
+  // tslint:disable-next-line:typedef
+  getCategories() {
+    return this.categories;
   }
 }
