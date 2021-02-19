@@ -3,7 +3,7 @@
     <tr>
       <th colspan="6">
         <h1>
-          Cart
+          Kosár
         </h1>
       </th>
     </tr>
@@ -27,8 +27,13 @@
         Eltávolítás
       </td>
     </tr>
-    <tr>
+    <tr class="contentOfCart">
       <th colspan="6">
+        <div class="emptyCar" *ngIf="productsInCart.length == 0">
+          <h2>
+            Nincs még termék a kosarában!
+          </h2>
+        </div>
         <div *ngFor="let product of productsInCart; index as i">
           <app-product-cart-line [product]="productsInCart[i]"></app-product-cart-line>
         </div>
