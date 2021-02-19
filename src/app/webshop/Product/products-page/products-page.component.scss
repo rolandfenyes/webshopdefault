@@ -15,7 +15,7 @@ ul li {
 table {
   max-width: 90vw;
   width: 100%;
-  margin: 10px auto;
+  //margin: 10px auto;
 }
 
 td {
@@ -29,4 +29,8 @@ td, th {
 
 .title-row {
   text-align: center;
+}
+
+.left-column {
+  background-color: #D3FADF;
 }
