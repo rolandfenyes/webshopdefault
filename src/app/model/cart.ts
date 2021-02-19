@@ -75,7 +75,7 @@ export class Cart {
   calculatePrice() {
     this.priceInHUF = 0;
     this.productDTOs.forEach(product => {
-      this.priceInHUF += (product.priceInHUF * product.amount);
+      this.priceInHUF += (product.price * product.amount);
       }
     );
     try {

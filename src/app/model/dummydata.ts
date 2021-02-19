@@ -7,13 +7,13 @@ export class DummyData {
   private constructor() {
     this.products = [];
     this.categories = [];
-    this.createNewCategory();
-    const firstLetter = ['A', 'B', 'C', 'D'];
-    for (let i = 1; i <= 20; i++) {
-      this.createNewProduct(i, i, firstLetter[i - 1]);
-    }
-    Cart.getInstance().addToCart(this.products[0]);
-    Cart.getInstance().addToCart(this.products[1]);
+    // this.createNewCategory();
+    // const firstLetter = ['A', 'B', 'C', 'D'];
+    // for (let i = 1; i <= 20; i++) {
+    //   this.createNewProduct(i, i, firstLetter[i - 1]);
+    // }
+    // Cart.getInstance().addToCart(this.products[0]);
+    // Cart.getInstance().addToCart(this.products[1]);
   }
   private static instance: DummyData;
 
@@ -26,6 +26,12 @@ export class DummyData {
       this.instance = new DummyData();
     }
     return this.instance;
+  }
+
+  // tslint:disable-next-line:typedef
+  setProducts(products) {
+    console.log(products);
+    this.products = products;
   }
 
   // tslint:disable-next-line:typedef
@@ -59,10 +65,10 @@ export class DummyData {
     picture2.url = '../../../../assets/jatszoter_2.jpg';
     picture3.url = '../../../../assets/jatszoter_3.jpg';
     picture4.url = '../../../../assets/jatszoter_4.jpg';
-    product.pictureURLs = [picture1, picture2, picture3, picture4, picture1];
-    product.productName = fLetter + 'Penthouse' + id.toString();
+    product.playGroundImgs = [picture1, picture2, picture3, picture4, picture1];
+    product.name = fLetter + 'Penthouse' + id.toString();
     product.id = id;
-    product.priceInHUF = 230000 + id;
+    product.price = 230000 + id;
     product.amount = amount;
     product.description = 'Főbb tulajdonságok:\n' +
                           ' - faház + terasz, 2 ablakkal, ajtóval\n' +

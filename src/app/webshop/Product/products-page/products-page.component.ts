@@ -1,9 +1,11 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Inject, OnInit} from '@angular/core';
 import {ProductDTO} from '../../../model/product';
 import {DummyData} from '../../../model/dummydata';
 import {OrderEnum} from '../../../customcomponents/filter/filter.component';
 import {ActivatedRoute, Router} from '@angular/router';
 import { Location } from '@angular/common';
+import {ProductServiceService} from '../../../services/product-service.service';
+import {HttpClient} from '@angular/common/http';
 
 @Component({
   selector: 'app-products-page',
@@ -18,7 +20,11 @@ export class ProductsPageComponent implements OnInit {
   pageTitle: string;
   category: string;
 
-  constructor(private route: ActivatedRoute, private router: Router, private location: Location) {
+  // tslint:disable-next-line:max-line-length
+  constructor(private route: ActivatedRoute, private router: Router, private location: Location, http: HttpClient) {
+    const productService = new ProductServiceService(http, 'https://185.203.117.142:8443');
+    let products = productService.getProducts().then(p => DummyData.getInstance().setProducts(p));
+
     this.router.events.subscribe(val => {
       if (location.path() !== this.category) {
         this.ngOnInit();
@@ -27,6 +33,8 @@ export class ProductsPageComponent implements OnInit {
   }
 
   ngOnInit(): void {
+
+
     const category = this.route.snapshot.paramMap.get('category');
     if (!category) {
       this.products = DummyData.getInstance().getProducts();
@@ -47,23 +55,23 @@ export class ProductsPageComponent implements OnInit {
   orderProductsBy(orderType: OrderEnum) {
     switch (orderType) {
       // tslint:disable-next-line:max-line-length
-      case OrderEnum.PRICE_ORDER: this.productsShown.sort((p1, p2) => p1.priceInHUF < p2.priceInHUF ? -1 : p1.priceInHUF > p2.priceInHUF ? 1 : 0);
+      case OrderEnum.PRICE_ORDER: this.productsShown.sort((p1, p2) => p1.price < p2.price ? -1 : p1.price > p2.price ? 1 : 0);
                                   break;
       // tslint:disable-next-line:max-line-length
-      case OrderEnum.PRICE_ORDER_2: this.productsShown.sort((p1, p2) => p1.priceInHUF < p2.priceInHUF ? 1 : p1.priceInHUF > p2.priceInHUF ? -1 : 0);
+      case OrderEnum.PRICE_ORDER_2: this.productsShown.sort((p1, p2) => p1.price < p2.price ? 1 : p1.price > p2.price ? -1 : 0);
                                     break;
       // tslint:disable-next-line:max-line-length
-      case OrderEnum.ALPHABETIC_ORDER: this.productsShown.sort((p1, p2) => p1.productName < p2.productName ? -1 : p1.productName > p2.productName ? 1 : 0);
+      case OrderEnum.ALPHABETIC_ORDER: this.productsShown.sort((p1, p2) => p1.name < p2.name ? -1 : p1.name > p2.name ? 1 : 0);
                                        break;
       // tslint:disable-next-line:max-line-length
-      case OrderEnum.ALPHABETIC_ORDER_BACKWARD: this.productsShown.sort((p1, p2) => p1.productName < p2.productName ? 1 : p1.productName > p2.productName ? -1 : 0);
+      case OrderEnum.ALPHABETIC_ORDER_BACKWARD: this.productsShown.sort((p1, p2) => p1.name < p2.name ? 1 : p1.name > p2.name ? -1 : 0);
                                                 break;
     }
   }
 
   // tslint:disable-next-line:typedef
   filterProducts(price: number, width: number, height: number, depth: number, material?: string) {
-    this.productsShown = this.products.filter(p => p.priceInHUF < price &&
+    this.productsShown = this.products.filter(p => p.price < price &&
                                               p.dimensions.widthInMetre < width &&
                                               p.dimensions.heightInMetre < height &&
                                               p.dimensions.depthInMetre < depth);

@@ -20,14 +20,14 @@ export class ProductCartLineComponent implements OnInit {
   constructor(private router: Router) { }
 
   ngOnInit(): void {
-    this.price = recalculatePrice(1, this.product.priceInHUF);
-    this.priceInTotal = recalculatePrice(this.product.amount, this.product.priceInHUF);
+    this.price = recalculatePrice(1, this.product.price);
+    this.priceInTotal = recalculatePrice(this.product.amount, this.product.price);
   }
 
   // tslint:disable-next-line:typedef
   increaseAmount() {
     this.product.amount += 1;
-    this.priceInTotal = recalculatePrice(this.product.amount, this.product.priceInHUF);
+    this.priceInTotal = recalculatePrice(this.product.amount, this.product.price);
     Cart.getInstance().calculatePrice();
   }
 
@@ -38,7 +38,7 @@ export class ProductCartLineComponent implements OnInit {
     } else {
       this.product.amount -= 1;
     }
-    this.priceInTotal = recalculatePrice(this.product.amount, this.product.priceInHUF);
+    this.priceInTotal = recalculatePrice(this.product.amount, this.product.price);
     Cart.getInstance().calculatePrice();
   }
 

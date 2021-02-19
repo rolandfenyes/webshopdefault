@@ -18,6 +18,7 @@ import { FilterComponent } from './customcomponents/filter/filter.component';
 import {FormsModule} from '@angular/forms';
 import { FooterComponent } from './customcomponents/footer/footer.component';
 import { CategoriesComponent } from './customcomponents/categories/categories.component';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { CategoriesComponent } from './customcomponents/categories/categories.co
     IvyGalleryModule,
     NgbDropdownModule,
     NgbCollapseModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
