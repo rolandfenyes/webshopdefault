@@ -20,7 +20,7 @@ export class ProductCartLineComponent implements OnInit {
   constructor(private router: Router) { }
 
   ngOnInit(): void {
-    this.price = recalculatePrice(1, this.product.price);
+    this.price = recalculatePrice(this.product.amount, this.product.price);
     this.priceInTotal = recalculatePrice(this.product.amount, this.product.price);
   }
 

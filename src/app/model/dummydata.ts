@@ -32,6 +32,9 @@ export class DummyData {
   setProducts(products) {
     console.log(products);
     this.products = products;
+    this.products.forEach(p => {
+      p.amount = 1;
+    });
   }
 
   // tslint:disable-next-line:typedef

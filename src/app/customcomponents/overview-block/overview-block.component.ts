@@ -37,6 +37,7 @@ export class OverviewBlockComponent implements OnInit {
   // tslint:disable-next-line:typedef
   increaseAmount() {
     this.amount += 1;
+    this.product.amount += 1;
     this.price = recalculatePrice(this.amount, this.product.price);
   }
 
@@ -44,8 +45,10 @@ export class OverviewBlockComponent implements OnInit {
   decreaseAmount() {
     if (this.amount <= 1) {
       this.amount = 1;
+      this.product.amount = 1;
     } else {
       this.amount -= 1;
+      this.product.amount -= 1;
     }
     this.price = recalculatePrice(this.amount, this.product.price);
   }
@@ -57,6 +60,7 @@ export class OverviewBlockComponent implements OnInit {
 
   // tslint:disable-next-line:typedef
   addElementToCart() {
+    console.log(this.product.amount);
     Cart.getInstance().addToCart(this.product);
   }
 
