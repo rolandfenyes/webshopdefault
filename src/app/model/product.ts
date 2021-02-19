@@ -2,8 +2,8 @@ export class ProductDTO {
   id: number;
   name: string;
   price: number;
-  description: string;
-  playGroundImgs: PictureURLDTO[];
+  description?: string;
+  playGroundImgs?: PictureURLDTO[];
   dimensions?: DimensionsDTO;
   amount: number;
   categoryType = 'Fa';
