@@ -77,4 +77,9 @@ export class ProductsPageComponent implements OnInit {
                                               p.dimensions.depthInMetre < depth);
   }
 
+  // tslint:disable-next-line:typedef
+  filterProductsByPrice(price: number) {
+    this.productsShown = this.products.filter(p => p.price < price);
+  }
+
 }
