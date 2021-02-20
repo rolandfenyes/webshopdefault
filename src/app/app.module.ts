@@ -19,6 +19,7 @@ import {FormsModule} from '@angular/forms';
 import { FooterComponent } from './customcomponents/footer/footer.component';
 import { CategoriesComponent } from './customcomponents/categories/categories.component';
 import {HttpClientModule} from '@angular/common/http';
+import { HeaderComponent } from './webshop/Home/header/header.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import {HttpClientModule} from '@angular/common/http';
     ProductCartLineComponent,
     FilterComponent,
     FooterComponent,
-    CategoriesComponent
+    CategoriesComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
