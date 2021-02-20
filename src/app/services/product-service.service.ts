@@ -14,7 +14,7 @@ export class ProductServiceService {
   }
 
   async getProducts(): Promise<ProductDTO[]> {
-    return this.http.get<ProductDTO[]>( 'http://192.168.0.110:8080' + this.productUrl + '/getAll').toPromise();
+    return this.http.get<ProductDTO[]>( 'https://185.203.117.142:8443' + this.productUrl + '/getAll').toPromise();
   }
 
 }

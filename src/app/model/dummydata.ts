@@ -7,13 +7,13 @@ export class DummyData {
   private constructor() {
     this.products = [];
     this.categories = [];
-    // this.createNewCategory();
-    // const firstLetter = ['A', 'B', 'C', 'D'];
-    // for (let i = 1; i <= 20; i++) {
-    //   this.createNewProduct(i, i, firstLetter[i - 1]);
-    // }
-    // Cart.getInstance().addToCart(this.products[0]);
-    // Cart.getInstance().addToCart(this.products[1]);
+    this.createNewCategory();
+    const firstLetter = ['A', 'B', 'C', 'D'];
+    for (let i = 1; i <= 20; i++) {
+      this.createNewProduct(i, i, firstLetter[i - 1]);
+    }
+    Cart.getInstance().addToCart(this.products[0]);
+    Cart.getInstance().addToCart(this.products[1]);
   }
   private static instance: DummyData;
 

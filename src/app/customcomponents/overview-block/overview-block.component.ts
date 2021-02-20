@@ -32,9 +32,6 @@ export class OverviewBlockComponent implements OnInit {
   }
 
   // tslint:disable-next-line:typedef
-
-
-  // tslint:disable-next-line:typedef
   increaseAmount() {
     this.amount += 1;
     this.product.amount += 1;
