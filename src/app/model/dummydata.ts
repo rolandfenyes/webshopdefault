@@ -1,12 +1,15 @@
 import {DimensionsDTO, PictureURLDTO, ProductDTO} from './product';
 import {Cart} from './cart';
+import {CategoryDTO} from './category';
 
 export class DummyData {
 
   private constructor() {
     this.products = [];
+    this.categories = [];
+    this.createNewCategory();
     const firstLetter = ['A', 'B', 'C', 'D'];
-    for (let i = 1; i <= 4; i++) {
+    for (let i = 1; i <= 20; i++) {
       this.createNewProduct(i, i, firstLetter[i - 1]);
     }
     Cart.getInstance().addToCart(this.products[0]);
@@ -15,6 +18,7 @@ export class DummyData {
   private static instance: DummyData;
 
   private products: ProductDTO[];
+  private categories: CategoryDTO[];
 
   // tslint:disable-next-line:typedef
   public static getInstance() {
@@ -22,6 +26,28 @@ export class DummyData {
       this.instance = new DummyData();
     }
     return this.instance;
+  }
+
+  // tslint:disable-next-line:typedef
+  setProducts(products) {
+    console.log(products);
+    this.products = products;
+    this.products.forEach(p => {
+      p.amount = 1;
+    });
+  }
+
+  // tslint:disable-next-line:typedef
+  createNewCategory() {
+    const categoryTypes = ['Játszóterek', 'Hinták', 'Csúszdák'];
+    const categoryDomainTypes = ['jatszoterek', 'hintak', 'csuszdak'];
+    for (let i = 0; i < categoryTypes.length; i++) {
+      let category = new CategoryDTO();
+      category.id = i;
+      category.categoryName = categoryTypes[i];
+      category.categoryInDomain = categoryDomainTypes[i];
+      this.categories.push(category);
+    }
   }
 
   // tslint:disable-next-line:typedef
@@ -42,10 +68,10 @@ export class DummyData {
     picture2.url = '../../../../assets/jatszoter_2.jpg';
     picture3.url = '../../../../assets/jatszoter_3.jpg';
     picture4.url = '../../../../assets/jatszoter_4.jpg';
-    product.pictureURLs = [picture1, picture2, picture3, picture4, picture1];
-    product.productName = fLetter + 'Penthouse' + id.toString();
+    product.playGroundImgs = [picture1, picture2, picture3, picture4, picture1];
+    product.name = fLetter + 'Penthouse' + id.toString();
     product.id = id;
-    product.priceInHUF = 230000 + id;
+    product.price = 230000 + id;
     product.amount = amount;
     product.description = 'Főbb tulajdonságok:\n' +
                           ' - faház + terasz, 2 ablakkal, ajtóval\n' +
@@ -61,6 +87,10 @@ export class DummyData {
       ' - paddá alakítható homokozó fedés (+20.000 Forint)\n' +
       ' - 80cm széles mászófal (+20,000 Forint)\n' +
       ' - dupla hintamodul akár 4 hintának (+25.000 Forint)';
+    if (id > 3) {
+      id = 1;
+    }
+    product.categoryType = this.categories[id - 1].categoryName;
     this.products.push(product);
   }
 
@@ -72,5 +102,10 @@ export class DummyData {
   // tslint:disable-next-line:typedef
   getProducts() {
     return this.products;
+  }
+
+  // tslint:disable-next-line:typedef
+  getCategories() {
+    return this.categories;
   }
 }

@@ -7,6 +7,7 @@ import {CartPageComponent} from './webshop/Cart/cart-page/cart-page.component';
 const routes: Routes = [
   {path: 'product/:id', component: ProductPageComponent},
   {path: 'products', component: ProductsPageComponent},
+  {path: 'products/:category', component: ProductsPageComponent},
   {path: 'my-cart', component: CartPageComponent}
 ];
 

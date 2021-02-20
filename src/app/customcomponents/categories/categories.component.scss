@@ -45,3 +45,18 @@ th, td {
   width: 100%;
   text-align: center;
 }
+
+.category-btn {
+  margin: 5px;
+  background-color: transparent;
+  border-color: transparent;
+  color: black;
+  transition: .4s;
+}
+
+.category-btn:hover {
+  //background-color: #2E8B57;
+  //border-color: #2E8B57;
+  color: #2E8B57;
+  transition: .4s;
+}

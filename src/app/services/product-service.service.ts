@@ -9,12 +9,12 @@ export class ProductServiceService {
 
   productUrl: string;
 
-  constructor(private http: HttpClient, @Inject('BASE_URL') private baseUrl: string) {
-    this.productUrl = '/api/playgrounds';
+  constructor(private http: HttpClient, private baseUrl: string) {
+    this.productUrl = '/api/playground';
   }
 
   async getProducts(): Promise<ProductDTO[]> {
-    return this.http.get<ProductDTO[]>(this.baseUrl + this.productUrl + '/getAll').toPromise();
+    return this.http.get<ProductDTO[]>( 'https://185.203.117.142:8443' + this.productUrl + '/getAll').toPromise();
   }
 
 }

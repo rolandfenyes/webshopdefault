@@ -13,9 +13,12 @@ platformBrowserDynamic().bootstrapModule(AppModule)
 
 // tslint:disable-next-line:typedef
 export function getBaseUrl() {
-  return document.getElementsByTagName('base')[0].href;
+  return 'https://185.203.117.142:8443';
 }
 
 const providers = [
   { provide: 'BASE_URL', useFactory: getBaseUrl, deps: [] }
 ];
+
+platformBrowserDynamic(providers).bootstrapModule(AppModule)
+  .catch(err => console.log(err));

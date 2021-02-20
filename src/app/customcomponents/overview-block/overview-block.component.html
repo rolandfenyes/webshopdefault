@@ -1,24 +1,25 @@
-<div *ngIf="onProductsPage" class="details mb-3" style="width: 18rem;">
-  <img (click)="navigateToProductPage()" src="{{product.pictureURLs[0].url}}" class="card-img-top" alt="...">
+<div *ngIf="onProductsPage" class="details card" style="width: 18rem;">
+
+  <img (click)="navigateToProductPage()" src="{{product.playGroundImgs[0].url}}" class="card-img-top" alt="...">
   <div (click)="navigateToProductPage()" class="card-body">
-    <h5 class="card-title">{{product.productName}}</h5>
-    <app-dimensions [productDimensions]="product.dimensions"></app-dimensions>
+    <h5 class="card-title">{{product.name}}</h5>
+    <app-dimensions class="hidden" [productDimensions]="product.dimensions"></app-dimensions>
   </div>
   <ul (click)="navigateToProductPage()" class="list-group list-group-flush">
-    <li class="list-colour list-group-item">Mennyiség: {{amount}}</li>
+    <li class="hidden list-colour list-group-item">Mennyiség: {{amount}}</li>
     <li class="list-colour list-group-item">
       <h5>
         {{price}}
       </h5>
     </li>
   </ul>
-  <div class="card-body">
+  <div class="hidden card-body">
     <table>
       <tr>
-        <th>
+        <th class="hidden">
           <div class="btn-group" role="group" aria-label="First group">
-            <button (click)="decreaseAmount()" type="button" class="btn btn-secondary">-</button>
-            <button (click)="increaseAmount()" type="button" class="btn btn-secondary">+</button>
+            <button (click)="decreaseAmount()" type="button" class="btn">-</button>
+            <button (click)="increaseAmount()" type="button" class="btn">+</button>
           </div>
         </th>
         <th>
@@ -29,26 +30,26 @@
   </div>
 </div>
 <div *ngIf="!onProductsPage" class="border bg-light mb-3" style="width: 18rem;">
-  <img src="{{product.pictureURLs[0].url}}" class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title">{{product.productName}}</h5>
+  <img src="{{product.playGroundImgs[0].url}}" class="card-img-top" alt="...">
+  <div class="card-body cart-body">
+    <h5 class="card-title">{{product.name}}</h5>
     <app-dimensions [productDimensions]="product.dimensions"></app-dimensions>
   </div>
   <ul class="list-group list-group-flush">
-    <li class="list-colour list-group-item">Mennyiség: {{amount}}</li>
+    <li class="cart-body list-colour list-group-item">Mennyiség: {{amount}}</li>
     <li class="list-colour list-group-item">
       <h5>
         {{price}}
       </h5>
     </li>
   </ul>
-  <div class="card-body">
+  <div class="card-body cart-body ">
     <table>
       <tr>
         <th>
           <div class="btn-group" role="group" aria-label="First group">
-            <button (click)="decreaseAmount()" type="button" class="btn btn-secondary">-</button>
-            <button (click)="increaseAmount()" type="button" class="btn btn-secondary">+</button>
+            <button (click)="decreaseAmount()" type="button" class="btn">-</button>
+            <button (click)="increaseAmount()" type="button" class="btn">+</button>
           </div>
         </th>
         <th>

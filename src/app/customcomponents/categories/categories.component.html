@@ -1,0 +1,16 @@
+<body>
+<table class="filter">
+  <tr>
+    <th>
+      Kategóriák
+    </th>
+  </tr>
+  <tr class="border-top">
+    <button (click)="categorySelected('')" class="category-btn btn">Összes termék</button>
+    <div *ngFor="let category of categories; index as i">
+      <button (click)="categorySelected(category.categoryInDomain)" class="category-btn btn">{{category.categoryName}}</button>
+    </div>
+  </tr>
+
+</table>
+</body>

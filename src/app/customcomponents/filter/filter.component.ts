@@ -12,6 +12,8 @@ export class FilterComponent implements OnInit {
   @Input()
   parent: ProductsPageComponent;
 
+  isCollapsed = true;
+
   filterEnum = FilterEnum;
   materialEnum = MaterialType;
   public orderEnum = OrderEnum;
@@ -40,6 +42,7 @@ export class FilterComponent implements OnInit {
     const value = event;
     switch (filterType) {
       case FilterEnum.PRICE: this.price = recalculatePrice(1, value);
+                             this.parent.filterProductsByPrice(this.priceNumber);
                              break;
       case FilterEnum.WIDTH: this.widthNumber = event;
                              break;

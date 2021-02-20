@@ -36,3 +36,24 @@ td, th {
 .return-to-webshop {
   text-align: left;
 }
+
+.back-to-shopping {
+  background-color: #f8f9fa !important;
+  color: black;
+  border-color: #f8f9fa;
+  transition: .4s;
+}
+
+.back-to-shopping:hover {
+  background-color: gray !important;
+  color: white;
+  transition: .4s;
+}
+
+.contentOfCart {
+  height: 50vh;
+}
+
+.emptyCar {
+  margin-top: auto;
+}
