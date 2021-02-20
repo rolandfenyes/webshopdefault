@@ -22,8 +22,8 @@ export class ProductsPageComponent implements OnInit {
 
   // tslint:disable-next-line:max-line-length
   constructor(private route: ActivatedRoute, private router: Router, private location: Location, http: HttpClient) {
-    // const productService = new ProductServiceService(http, 'https://185.203.117.142:8443');
-    // let products = productService.getProducts().then(p => DummyData.getInstance().setProducts(p));
+    const productService = new ProductServiceService(http, 'http://localhost:4200');
+    let products = productService.getProducts().then(p => DummyData.getInstance().setProducts(p));
 
     this.router.events.subscribe(val => {
       if (location.path() !== this.category) {
