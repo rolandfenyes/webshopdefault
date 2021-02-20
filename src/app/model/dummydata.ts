@@ -34,6 +34,19 @@ export class DummyData {
     this.products = products;
     this.products.forEach(p => {
       p.amount = 1;
+      if (p.playGroundImgs.length === 0) {
+        const noImage = new PictureURLDTO();
+        noImage.url = 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/600px-No_image_available.svg.png';
+        p.playGroundImgs.push(noImage);
+      }
+      if (p.description == null) {
+        console.log('hmm');
+        p.description = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur finibus turpis vitae dolor venenatis, sit amet volutpat neque sollicitudin. Nulla tempus tristique vehicula. Sed nec massa neque. Aliquam vitae magna non nunc varius bibendum. Mauris interdum lorem accumsan pellentesque accumsan. Sed venenatis libero bibendum eros maximus, sit amet congue odio vehicula. Nulla a libero convallis, accumsan libero quis, tincidunt odio. Praesent a ullamcorper nisl, ac cursus ligula. Nam tincidunt, justo vitae ornare egestas, massa justo sollicitudin magna, ut volutpat justo orci et augue. Proin a laoreet arcu. Aliquam porta ornare dui, eleifend scelerisque lacus suscipit sed. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer laoreet nisl id metus efficitur, sed suscipit neque lacinia.\n' +
+          '\n' +
+          'Cras gravida, erat in viverra feugiat, massa dolor placerat nisl, sed pulvinar elit augue non erat. Sed et aliquam quam, ac suscipit mi. Donec purus eros, ultricies id nisi quis, gravida sodales leo. Integer nec ornare felis, in semper nisl. Aenean et lacus ac ex blandit porttitor. Aliquam convallis augue in lacus pharetra, sit amet pulvinar diam efficitur. Nam facilisis vestibulum ante non hendrerit. Mauris dapibus suscipit velit tempus condimentum.\n' +
+          '\n' +
+          'Sed eu metus lectus. Pellentesque rutrum viverra gravida. Morbi scelerisque tellus at libero rutrum tristique. Nulla nulla magna, viverra vel facilisis eu, sagittis non mi. Nullam vel hendrerit mi. Morbi venenatis tellus quis egestas venenatis. Vivamus sed erat neque. Nam feugiat accumsan metus vitae malesuada. Vestibulum sollicitudin arcu in nisl consequat tristique. Proin ornare convallis sapien, vel imperdiet dui euismod a. Morbi sollicitudin ante vel luctus viverra.';
+      }
     });
   }
 
@@ -96,7 +109,7 @@ export class DummyData {
 
   // tslint:disable-next-line:typedef
   getProductById(id: number) {
-    return this.products[id];
+    return this.products.filter(p => p.id === id)[0];
   }
 
   // tslint:disable-next-line:typedef

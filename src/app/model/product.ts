@@ -10,13 +10,13 @@ export class ProductDTO {
 }
 
 export class DimensionsDTO {
-  widthInMetre: number;
-  heightInMetre: number;
-  depthInMetre: number;
-  weightInKg: number;
-  material: string;
-  playGroundID: number;
-  id: number;
+  widthInMetre?: number;
+  heightInMetre?: number;
+  depthInMetre?: number;
+  weightInKg?: number;
+  material?: string;
+  playGroundID?: number;
+  id?: number;
 }
 
 export class PictureURLDTO {

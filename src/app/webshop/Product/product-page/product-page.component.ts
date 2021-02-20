@@ -16,8 +16,8 @@ export class ProductPageComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    // this.product = DummyData.getInstance().getProductById(Number(this.route.snapshot.paramMap.get('id')));
-    this.product = DummyData.getInstance().getProducts()[0];
+    this.product = DummyData.getInstance().getProductById(Number(this.route.snapshot.paramMap.get('id')));
+    // this.product = DummyData.getInstance().getProducts()[0];
     console.log(DummyData.getInstance().getProducts().length);
     console.log(this.product);
   }

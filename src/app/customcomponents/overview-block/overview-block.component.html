@@ -3,7 +3,9 @@
   <img (click)="navigateToProductPage()" src="{{product.playGroundImgs[0].url}}" class="card-img-top" alt="...">
   <div (click)="navigateToProductPage()" class="card-body">
     <h5 class="card-title">{{product.name}}</h5>
-    <app-dimensions class="hidden" [productDimensions]="product.dimensions"></app-dimensions>
+    <div *ngIf="product.dimensions != null">
+      <app-dimensions class="hidden" [productDimensions]="product.dimensions"></app-dimensions>
+    </div>
   </div>
   <ul (click)="navigateToProductPage()" class="list-group list-group-flush">
     <li class="hidden list-colour list-group-item">Mennyiség: {{amount}}</li>
