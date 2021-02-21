@@ -18,8 +18,12 @@ import { FilterComponent } from './customcomponents/filter/filter.component';
 import {FormsModule} from '@angular/forms';
 import { FooterComponent } from './customcomponents/footer/footer.component';
 import { CategoriesComponent } from './customcomponents/categories/categories.component';
-import {HttpClientModule} from '@angular/common/http';
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import { HeaderComponent } from './webshop/Home/header/header.component';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {InterceptorService} from './services/interceptor.service';
+
 
 @NgModule({
   declarations: [
@@ -45,9 +49,13 @@ import { HeaderComponent } from './webshop/Home/header/header.component';
     NgbDropdownModule,
     NgbCollapseModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatProgressBarModule,
+    BrowserAnimationsModule
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: InterceptorService, multi: true }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

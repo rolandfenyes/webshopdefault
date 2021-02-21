@@ -1,3 +1,6 @@
 <app-navbar></app-navbar>
+<div *ngIf="loaderService.isLaoding | async" class="loader-container">
+  <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+</div>
 <router-outlet></router-outlet>
 <app-footer></app-footer>
