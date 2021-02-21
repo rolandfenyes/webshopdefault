@@ -23,18 +23,24 @@ export class ProductsPageComponent implements OnInit {
   // tslint:disable-next-line:max-line-length
   constructor(private route: ActivatedRoute, private router: Router, private location: Location, http: HttpClient) {
     const productService = new ProductServiceService(http, 'http://localhost:4200');
-    let products = productService.getProducts().then(p => DummyData.getInstance().setProducts(p));
+    productService.getProducts().then(p => {
+      DummyData.getInstance().setProducts(p);
+      p.forEach(product => {
+        this.products.push(product);
+      });
+    });
 
     this.router.events.subscribe(val => {
       if (location.path() !== this.category) {
-        this.ngOnInit();
+        this.productsAreDownloaded();
       }
     });
   }
 
   ngOnInit(): void {
+  }
 
-
+  productsAreDownloaded(): void {
     const category = this.route.snapshot.paramMap.get('category');
     if (!category) {
       this.products = DummyData.getInstance().getProducts();
