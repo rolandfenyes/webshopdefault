@@ -1,5 +1,5 @@
 <div *ngIf="loaderService.isLaoding | async" class="loader-container">
-  <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+  <mat-progress-bar [color]="color" mode="indeterminate"></mat-progress-bar>
 </div>
 <app-navbar></app-navbar>
 <router-outlet></router-outlet>
