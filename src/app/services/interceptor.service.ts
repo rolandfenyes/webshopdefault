@@ -12,12 +12,12 @@ export class InterceptorService implements HttpInterceptor {
   constructor(public loaderService: LoaderService) { }
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-    this.loaderService.isLaoding.next(true);
+    this.loaderService.isLoading.next(true);
 
     return next.handle(req).pipe(
       finalize(
         () => {
-          this.loaderService.isLaoding.next(false);
+          this.loaderService.isLoading.next(false);
         }
       )
     );

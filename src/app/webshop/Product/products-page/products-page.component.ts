@@ -22,13 +22,15 @@ export class ProductsPageComponent implements OnInit {
 
   // tslint:disable-next-line:max-line-length
   constructor(private route: ActivatedRoute, private router: Router, private location: Location, http: HttpClient) {
-    const productService = new ProductServiceService(http, 'http://localhost:4200');
-    productService.getProducts().then(p => {
-      DummyData.getInstance().setProducts(p);
-      p.forEach(product => {
-        this.products.push(product);
+    if (DummyData.getInstance().getProducts().length <= 1) {
+      const productService = new ProductServiceService(http, 'http://localhost:4200');
+      productService.getProducts().then(p => {
+        DummyData.getInstance().setProducts(p);
+        p.forEach(product => {
+          this.products.push(product);
+        });
       });
-    });
+    }
 
     this.router.events.subscribe(val => {
       if (location.path() !== this.category) {
