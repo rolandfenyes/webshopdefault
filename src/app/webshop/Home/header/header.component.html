@@ -8,13 +8,13 @@
     </h2>
   </div>
 </div>
-<div class="best-products">
-  <h1>
-    Legújabb játszótereink
-  </h1>
-  <ul>
-    <li *ngFor="let product of topProducts">
-      <app-overview-block [product]="product" [onProductsPage]="true"></app-overview-block>
-    </li>
-  </ul>
-</div>
+
+<h1>
+  Legújabb játszótereink
+</h1>
+<ul>
+  <li *ngFor="let product of topProducts">
+    <app-overview-block [product]="product" [onProductsPage]="true"></app-overview-block>
+  </li>
+</ul>
+

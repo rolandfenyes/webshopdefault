@@ -1,0 +1,45 @@
+.description-container {
+  width: 80vw;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.map-container {
+  background-image: url("../../../../assets/map_hungary.png");
+  height: 500px;
+  background-size: cover;
+  background-position: center;
+}
+
+.map-title {
+  background-color: #2E8B57;
+  color: white;
+  width: 40vw;
+  height: 75px;
+  text-align: right;
+}
+
+h1 {
+  position: relative;
+  top: 50%;
+  right: 10%;
+  transform: translateY(-50%);
+  font-size: 35px;
+}
+
+@media only screen and (max-width: 1019px) {
+
+  .map-container {
+    height: 100vh;
+    background-position-x: 955px;
+  }
+
+  .map-title {
+    width: 100%;
+    text-align: center;
+  }
+  h1 {
+    position: relative;
+    right: 0%;
+  }
+}
