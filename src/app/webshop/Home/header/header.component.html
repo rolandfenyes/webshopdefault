@@ -1,1 +1,20 @@
-<p>header works!</p>
+<div class="title-container">
+  <div class="tile-container-container">
+    <h1 class="title">
+      Fabrakadabra
+    </h1>
+    <h2>
+      Szlogen helye
+    </h2>
+  </div>
+</div>
+<div class="best-products">
+  <h1>
+    Legújabb játszótereink
+  </h1>
+  <ul>
+    <li *ngFor="let product of topProducts">
+      <app-overview-block [product]="product" [onProductsPage]="true"></app-overview-block>
+    </li>
+  </ul>
+</div>

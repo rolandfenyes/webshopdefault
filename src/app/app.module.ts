@@ -23,6 +23,7 @@ import { HeaderComponent } from './webshop/Home/header/header.component';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {InterceptorService} from './services/interceptor.service';
+import { HomePageComponent } from './webshop/Home/home-page/home-page.component';
 
 
 @NgModule({
@@ -40,7 +41,8 @@ import {InterceptorService} from './services/interceptor.service';
     FilterComponent,
     FooterComponent,
     CategoriesComponent,
-    HeaderComponent
+    HeaderComponent,
+    HomePageComponent
   ],
   imports: [
     BrowserModule,
