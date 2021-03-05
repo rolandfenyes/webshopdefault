@@ -25,6 +25,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {InterceptorService} from './services/interceptor.service';
 import { HomePageComponent } from './webshop/Home/home-page/home-page.component';
 import { DescriptionComponent } from './webshop/Home/description/description.component';
+import { ChatBubblesComponent } from './customcomponents/chat-bubbles/chat-bubbles.component';
+import { CommentBubbleComponent } from './customcomponents/comment-bubble/comment-bubble.component';
 
 
 @NgModule({
@@ -44,7 +46,9 @@ import { DescriptionComponent } from './webshop/Home/description/description.com
     CategoriesComponent,
     HeaderComponent,
     HomePageComponent,
-    DescriptionComponent
+    DescriptionComponent,
+    ChatBubblesComponent,
+    CommentBubbleComponent
   ],
   imports: [
     BrowserModule,

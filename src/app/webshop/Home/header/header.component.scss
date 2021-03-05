@@ -1,7 +1,7 @@
 .title-container,
 .best-products {
   width: 100%;
-  height: 55vh;
+  height: 50vh;
   text-align: center;
 }
 
@@ -49,6 +49,17 @@ ul li {
 
 .best-products {
   margin-top: 20px;
+}
+
+.best-products li {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.products-title {
+  margin-top: 2vh;
+  font-size: 30px;
 }
 
 @media only screen and (max-width: 1019px) {

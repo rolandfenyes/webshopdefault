@@ -9,10 +9,11 @@
   </div>
 </div>
 
-<h1>
-  Legújabb játszótereink
-</h1>
-<ul>
+
+<ul class="best-products">
+  <h1 class="products-title">
+    Legújabb játszótereink
+  </h1>
   <li *ngFor="let product of topProducts">
     <app-overview-block [product]="product" [onProductsPage]="true"></app-overview-block>
   </li>

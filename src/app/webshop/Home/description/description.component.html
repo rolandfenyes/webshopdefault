@@ -1,15 +1,50 @@
-<div class="description-container">
-  <h1>
-    Fabrakadabra
+<div class="description-title rounded">
+  <h1 class="title-h1 map-title-h1">
+    FAbrakadabra
   </h1>
-  <div *ngFor="let t of texts">
-    <p>{{t}}</p>
-  </div>
+</div>
+<div class="description-container">
+  <table>
+    <tr>
+      <td>
+        <div *ngFor="let t of texts">
+          <p>{{t}}</p>
+        </div>
+      </td>
+      <th>
+        <div class="design-item rounded">
+          <div class="image">
+
+          </div>
+        </div>
+      </th>
+    </tr>
+    <tr>
+      <th colspan="2">
+        <div class="comments-title rounded">
+          <h1 class="title-h1">
+            Rólunk mondták
+          </h1>
+        </div>
+      </th>
+    </tr>
+    <tr>
+      <th colspan="2">
+        <ul class="chat-bubbles">
+          <li *ngFor="let comment of comments">
+            <app-comment-bubble [comment]="comment"></app-comment-bubble>
+          </li>
+        </ul>
+
+      </th>
+    </tr>
+  </table>
+
 </div>
 <div class="area-container">
   <div class="map-container">
-    <div class="map-title">
-      <h1>
+    <div class="map-title rounded">
+      <h1 class="title-h1 map-title-h1">
         Hol dolgozunk?
       </h1>
     </div>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Comment, DummyComments} from '../../../model/comment';
 
 @Component({
   selector: 'app-description',
@@ -15,8 +16,11 @@ export class DescriptionComponent implements OnInit {
     'At lectus urna duis convallis. Sit amet purus gravida quis blandit turpis. Volutpat odio facilisis mauris sit amet. Mauris commodo quis imperdiet massa tincidunt. Velit scelerisque in dictum non consectetur a erat nam at. Posuere morbi leo urna molestie at elementum eu facilisis sed. Integer feugiat scelerisque varius morbi enim nunc faucibus. Nec dui nunc mattis enim ut tellus elementum. Malesuada fames ac turpis egestas sed tempus. Orci porta non pulvinar neque laoreet suspendisse interdum consectetur. Mattis pellentesque id nibh tortor id aliquet lectus proin nibh. Erat imperdiet sed euismod nisi. Posuere sollicitudin aliquam ultrices sagittis orci a scelerisque purus. Egestas diam in arcu cursus euismod. Auctor eu augue ut lectus. Sit amet mattis vulputate enim nulla aliquet. Arcu non odio euismod lacinia at quis risus sed vulputate. Amet tellus cras adipiscing enim. Laoreet sit amet cursus sit amet dictum.';
   texts: Array<string>;
 
+  comments: Comment[];
+
   constructor() {
     this.texts = this.text.split('\n');
+    this.comments = DummyComments.getInstance().getComments();
   }
 
   ngOnInit(): void {
