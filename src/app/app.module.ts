@@ -27,6 +27,7 @@ import { HomePageComponent } from './webshop/Home/home-page/home-page.component'
 import { DescriptionComponent } from './webshop/Home/description/description.component';
 import { ChatBubblesComponent } from './customcomponents/chat-bubbles/chat-bubbles.component';
 import { CommentBubbleComponent } from './customcomponents/comment-bubble/comment-bubble.component';
+import { ContactsComponent } from './webshop/Contacts/contacts/contacts.component';
 
 
 @NgModule({
@@ -48,7 +49,8 @@ import { CommentBubbleComponent } from './customcomponents/comment-bubble/commen
     HomePageComponent,
     DescriptionComponent,
     ChatBubblesComponent,
-    CommentBubbleComponent
+    CommentBubbleComponent,
+    ContactsComponent
   ],
   imports: [
     BrowserModule,

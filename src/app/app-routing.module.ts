@@ -4,6 +4,7 @@ import {ProductPageComponent} from './webshop/Product/product-page/product-page.
 import {ProductsPageComponent} from './webshop/Product/products-page/products-page.component';
 import {CartPageComponent} from './webshop/Cart/cart-page/cart-page.component';
 import {HomePageComponent} from './webshop/Home/home-page/home-page.component';
+import {ContactsComponent} from './webshop/Contacts/contacts/contacts.component';
 
 const routes: Routes = [
   {path: 'product/:id', component: ProductPageComponent},
@@ -11,7 +12,8 @@ const routes: Routes = [
   {path: 'products/:category', component: ProductsPageComponent},
   {path: 'my-cart', component: CartPageComponent},
   {path: '', component: HomePageComponent},
-  {path: 'home', component: HomePageComponent}
+  {path: 'home', component: HomePageComponent},
+  {path: 'contacts', component: ContactsComponent}
 ];
 
 @NgModule({
