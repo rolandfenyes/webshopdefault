@@ -3,10 +3,10 @@ export class ProductDTO {
   name: string;
   price: number;
   description?: string;
-  playGroundImgs?: PictureURLDTO[];
+  images?: PictureURLDTO[];
   dimensions?: DimensionsDTO;
   amount: number;
-  categoryType = 'Fa';
+  category = 'Fa';
 }
 
 export class DimensionsDTO {
@@ -15,7 +15,6 @@ export class DimensionsDTO {
   depthInMetre?: number;
   weightInKg?: number;
   material?: string;
-  playGroundID?: number;
   id?: number;
 }
 

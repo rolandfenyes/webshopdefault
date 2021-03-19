@@ -34,10 +34,10 @@ export class DummyData {
     this.products = products;
     this.products.forEach(p => {
       p.amount = 1;
-      if (p.playGroundImgs.length === 0) {
+      if (p.images.length === 0) {
         const noImage = new PictureURLDTO();
         noImage.url = 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/600px-No_image_available.svg.png';
-        p.playGroundImgs.push(noImage);
+        p.images.push(noImage);
       }
       if (p.description == null) {
         console.log('hmm');
@@ -81,7 +81,7 @@ export class DummyData {
     picture2.url = '../../../../assets/jatszoter_2.jpg';
     picture3.url = '../../../../assets/jatszoter_3.jpg';
     picture4.url = '../../../../assets/jatszoter_4.jpg';
-    product.playGroundImgs = [picture1, picture2, picture3, picture4, picture1];
+    product.images = [picture1, picture2, picture3, picture4, picture1];
     product.name = fLetter + 'Penthouse' + id.toString();
     product.id = id;
     product.price = 230000 + id;
@@ -103,7 +103,7 @@ export class DummyData {
     if (id > 3) {
       id = 1;
     }
-    product.categoryType = this.categories[id - 1].categoryName;
+    product.category = this.categories[id - 1].categoryName;
     this.products.push(product);
   }
 

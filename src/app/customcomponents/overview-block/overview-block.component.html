@@ -1,6 +1,6 @@
 <div *ngIf="onProductsPage" class="details card" style="width: 18rem;">
 
-  <img (click)="navigateToProductPage()" src="{{product.playGroundImgs[0].url}}" class="card-img-top" alt="...">
+  <img (click)="navigateToProductPage()" src="{{product.images[0].url}}" class="card-img-top" alt="...">
   <div (click)="navigateToProductPage()" class="card-body">
     <h5 class="title">{{product.name}}</h5>
     <div *ngIf="product.dimensions != null">
@@ -32,7 +32,7 @@
   </div>
 </div>
 <div *ngIf="!onProductsPage" class="border bg-light mb-3" style="width: 18rem;">
-  <img src="{{product.playGroundImgs[0].url}}" class="card-img-top" alt="...">
+  <img src="{{product.images[0].url}}" class="card-img-top" alt="...">
   <div class="card-body cart-body">
     <h5 class="card-title">{{product.name}}</h5>
     <app-dimensions [productDimensions]="product.dimensions"></app-dimensions>

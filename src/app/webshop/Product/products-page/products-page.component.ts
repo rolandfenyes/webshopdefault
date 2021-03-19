@@ -52,7 +52,7 @@ export class ProductsPageComponent implements OnInit {
     } else {
       const categories = DummyData.getInstance().getCategories();
       const rightCategory = categories.filter(c => c.categoryInDomain === category);
-      this.products = DummyData.getInstance().getProducts().filter(p => p.categoryType === rightCategory[0].categoryName);
+      this.products = DummyData.getInstance().getProducts().filter(p => p.category === rightCategory[0].categoryName);
       this.productsShown = this.products;
       this.pageTitle = rightCategory[0].categoryName;
       this.category = '';
